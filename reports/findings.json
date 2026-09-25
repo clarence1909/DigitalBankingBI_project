@@ -1,0 +1,341 @@
+{
+  "acquisition": {
+    "id": "acquisition",
+    "title": "TikTok is the cheapest channel per sign-up (RM17) but the most expensive per customer who stays (RM77)",
+    "chart": "reports/charts/01_acquisition_cost_per_retained_customer.png",
+    "finding": [
+      "TikTok brought in 5,288 customers at RM17 each, the lowest cost of any paid channel, but only 23% were still active in their third month, against 63% across all channels.",
+      "Per customer still active in month 3, TikTok cost RM77, 1.8 times as much as Refer a friend (RM43).",
+      "Customers who activate their debit card within 30 days are far more likely to stay: 88% are active in month 3 against 65% of those who do not (same channels, so not just channel mix)."
+    ],
+    "numbers": {
+      "channels": [
+        {
+          "channel": "referral",
+          "channel_name": "Refer a friend",
+          "new_customers": 2163.0,
+          "spend": 75705.0,
+          "cost_per_new": 35.0,
+          "m3_rate": 0.8114,
+          "cost_per_m3": 43.1368
+        },
+        {
+          "channel": "meta_ads",
+          "channel_name": "Meta (Facebook and Instagram)",
+          "new_customers": 5261.0,
+          "spend": 158340.74,
+          "cost_per_new": 30.0971,
+          "m3_rate": 0.6868,
+          "cost_per_m3": 43.8253
+        },
+        {
+          "channel": "google_search",
+          "channel_name": "Google Search",
+          "new_customers": 4842.0,
+          "spend": 221353.2,
+          "cost_per_new": 45.7152,
+          "m3_rate": 0.7736,
+          "cost_per_m3": 59.0905
+        },
+        {
+          "channel": "affiliate",
+          "channel_name": "Cashback affiliates",
+          "new_customers": 2361.0,
+          "spend": 73998.0,
+          "cost_per_new": 31.3418,
+          "m3_rate": 0.4845,
+          "cost_per_m3": 64.6836
+        },
+        {
+          "channel": "tiktok",
+          "channel_name": "TikTok",
+          "new_customers": 5288.0,
+          "spend": 92278.85,
+          "cost_per_new": 17.4506,
+          "m3_rate": 0.2269,
+          "cost_per_m3": 76.899
+        }
+      ],
+      "overall_m3_rate": 0.6269,
+      "cheapest_channel": "TikTok",
+      "priciest_channel": "TikTok",
+      "best_channel": "Refer a friend",
+      "m3_rate_card_activated_30d": 0.881,
+      "m3_rate_card_not_activated_30d": 0.6538
+    }
+  },
+  "onboarding": {
+    "id": "onboarding",
+    "title": "The guided selfie flow lifts account opening from 48.7% to 53.4%, and the gain comes at the selfie liveness check",
+    "chart": "reports/charts/02_onboarding_ekyc_ab_test.png",
+    "finding": [
+      "The biggest drop in sign-up is the selfie liveness check: before the test, only 70% of applicants who reached it got through.",
+      "In the A/B test the guided flow raised account opening from 48.7% to 53.4% (+4.8 points, 95% credible interval +2.7 to +6.7); the chance it is better is over 99.9%. The 50/50 split held: the sample-ratio check gave p = 0.045, above the 0.001 threshold set in advance.",
+      "The fraud guardrail held (0.83% of control accounts flagged against 0.65% guided; chance of a breach 0.3%), so the rule set before the test says ship the guided flow, as the bank did on 1 May 2026."
+    ],
+    "numbers": {
+      "step_pass_rates_before_test": {
+        "Phone verified": 0.89,
+        "MyKad scanned": 0.8601,
+        "Selfie liveness passed": 0.6978,
+        "eKYC approved": 0.9491,
+        "Account opened": 0.9673
+      },
+      "worst_step": "selfie liveness check",
+      "assigned_control": 4696,
+      "assigned_guided": 4892,
+      "srm_chi2": 4.007,
+      "srm_p_value": 0.0453,
+      "srm_ok": true,
+      "open_rate_control": 0.4868,
+      "open_rate_guided": 0.5343,
+      "uplift_mean_pp": 4.75,
+      "uplift_ci95_pp": [
+        2.74,
+        6.75
+      ],
+      "p_guided_better": 1.0,
+      "fraud_flag_rate_control": 0.0083,
+      "fraud_flag_rate_guided": 0.0065,
+      "p_guardrail_breach": 0.0033,
+      "decision": "ship guided"
+    }
+  },
+  "deposits": {
+    "id": "deposits",
+    "title": "The Raya FD promotion took the CASA ratio from 91% to 63% and pushed cost of funds to 2.60%",
+    "chart": "reports/charts/03_deposits_fd_promotion.png",
+    "finding": [
+      "Of RM12.5m placed in the promotion, 78% came out of customers' own Kelip savings, so most of it repriced existing money from about 2% to 3.88% rather than attracting new deposits.",
+      "The CASA ratio fell from 91% to 63% by May 2025 and cost of funds peaked at 2.60% in June 2025; the ratio only got back to 80% in November 2025.",
+      "At maturity, 59% of promotion money was still with the bank 30 days later (35% rolled over), against 84% for standard fixed deposits."
+    ],
+    "numbers": {
+      "casa_ratio_before": 0.9112,
+      "casa_ratio_trough": 0.6311,
+      "trough_month": "2025-05",
+      "cost_of_funds_before": 0.02038,
+      "cost_of_funds_peak": 0.02596,
+      "peak_month": "2025-06",
+      "casa_back_to_80_pct": "2025-11",
+      "promo_placed": 12502700.0,
+      "promo_pct_from_existing_savings": 78.0,
+      "promo_retention_30d": 0.5867,
+      "promo_rolled_over_share": 0.354,
+      "promo_left_bank_share": 0.4133,
+      "standard_retention_30d": 0.8415
+    }
+  },
+  "credit": {
+    "id": "credit",
+    "title": "Loans approved under the loosened v2 policy were 3.4 times as likely to be 30+ days past due by month 6 (10.9% against 3.2%)",
+    "chart": "reports/charts/04_credit_vintages_by_policy.png",
+    "finding": [
+      "By month 6 on book, 10.9% of loans approved under the v2 growth policy had been 30+ days past due, against 3.2% under v1 and 2.7% for the first two monthly vintages under the tightened v3.",
+      "Arrears roll forward rather than cure: over the last six months 49% of loans 30 to 59 days past due were 60 to 90 days past due a month later and 65% of those went on to 90+, while only 26% cured.",
+      "PAR30 peaked at 3.67% in June 2026 and has eased to 2.99% in August 2026 (just inside the 3.0% plan) as v2 loans season and fewer are approved; the GIL ratio (loans more than 90 days past due) has not turned yet: 1.26%, close to its June 2026 peak, because loans that fell behind earlier are still reaching 90 days."
+    ],
+    "numbers": {
+      "ever_30plus_mob6": {
+        "v1": 0.0323,
+        "v2": 0.1087,
+        "v3": 0.0273
+      },
+      "v2_to_v1_ratio_mob6": 3.36,
+      "roll_30_59_to_60_90": 0.493,
+      "roll_60_90_to_90plus": 0.6505,
+      "cure_30_59_to_current": 0.2555,
+      "par30_peak": 0.0367,
+      "par30_peak_month": "2026-06",
+      "par30_latest": 0.0299,
+      "par30_plan_latest": 0.03,
+      "gil_latest": 0.0126,
+      "gil_peak": 0.0127,
+      "gil_peak_month": "2026-06",
+      "gross_loans_latest": 49074347.69
+    }
+  },
+  "segments": {
+    "id": "segments",
+    "title": "Savers are 16% of customers but hold 87% of deposits; card-first spenders make 55% of card spend",
+    "chart": "reports/charts/05_customer_segments.png",
+    "finding": [
+      "k-means on four behaviour features, with k = 5 chosen by silhouette score (0.50), splits active customers into 5 segments; a further 28% of customers made no transactions of their own in six months.",
+      "Deposits are concentrated: savers are 16% of customers and hold 87% of deposits (median balance RM18,560), so a few rate-sensitive customers drive the CASA ratio.",
+      "Card-first spenders make 55% of card spend with a median balance of RM185, and everyday bankers, who mostly have their salary paid in, make 36%."
+    ],
+    "numbers": {
+      "k": 5,
+      "silhouette_by_k": {
+        "2": 0.3968,
+        "3": 0.4402,
+        "4": 0.4724,
+        "5": 0.4977,
+        "6": 0.4827,
+        "7": 0.466,
+        "8": 0.4675
+      },
+      "segments": [
+        {
+          "segment": "Savers",
+          "customers": 3177,
+          "share_of_customers": 0.1554,
+          "deposits": 83553911.53,
+          "share_of_deposits": 0.873,
+          "card_spend": 5547923.2,
+          "share_of_card_spend": 0.0822,
+          "median_balance": 18559.9783,
+          "median_txns": 3.8333,
+          "salary_share": 0.3141
+        },
+        {
+          "segment": "Card-first spenders",
+          "customers": 2807,
+          "share_of_customers": 0.1373,
+          "deposits": 818876.51,
+          "share_of_deposits": 0.0086,
+          "card_spend": 37141205.59,
+          "share_of_card_spend": 0.5503,
+          "median_balance": 185.245,
+          "median_txns": 21.0,
+          "salary_share": 0.4132
+        },
+        {
+          "segment": "Everyday bankers",
+          "customers": 3765,
+          "share_of_customers": 0.1842,
+          "deposits": 5196909.26,
+          "share_of_deposits": 0.0543,
+          "card_spend": 24439550.55,
+          "share_of_card_spend": 0.3621,
+          "median_balance": 887.4017,
+          "median_txns": 11.1667,
+          "salary_share": 0.6237
+        },
+        {
+          "segment": "Transfers only",
+          "customers": 2097,
+          "share_of_customers": 0.1026,
+          "deposits": 1356099.34,
+          "share_of_deposits": 0.0142,
+          "card_spend": 12463.33,
+          "share_of_card_spend": 0.0002,
+          "median_balance": 421.9933,
+          "median_txns": 5.5,
+          "salary_share": 0.4613
+        },
+        {
+          "segment": "Occasional users",
+          "customers": 2798,
+          "share_of_customers": 0.1369,
+          "deposits": 934010.84,
+          "share_of_deposits": 0.0098,
+          "card_spend": 352614.03,
+          "share_of_card_spend": 0.0052,
+          "median_balance": 95.3692,
+          "median_txns": 0.8333,
+          "salary_share": 0.0177
+        },
+        {
+          "segment": "Dormant",
+          "customers": 5794,
+          "share_of_customers": 0.2835,
+          "deposits": 3847495.1,
+          "share_of_deposits": 0.0402,
+          "card_spend": 0.0,
+          "share_of_card_spend": 0.0,
+          "median_balance": 20.82,
+          "median_txns": 0.0,
+          "salary_share": 0.0
+        }
+      ],
+      "customers_segmented": 20438
+    },
+    "segment_table": [
+      {
+        "segment": "Savers",
+        "customers": 3177,
+        "share_of_customers": 0.1554,
+        "deposits": 83553911.53,
+        "share_of_deposits": 0.873,
+        "card_spend": 5547923.2,
+        "share_of_card_spend": 0.0822,
+        "median_balance": 18559.9783,
+        "median_txns": 3.8333,
+        "salary_share": 0.3141,
+        "action": "Protect the relationship: tiered savings and FD ladders, and a retention offer before large deposits mature.",
+        "owner": "Treasurer"
+      },
+      {
+        "segment": "Card-first spenders",
+        "customers": 2807,
+        "share_of_customers": 0.1373,
+        "deposits": 818876.51,
+        "share_of_deposits": 0.0086,
+        "card_spend": 37141205.59,
+        "share_of_card_spend": 0.5503,
+        "median_balance": 185.245,
+        "median_txns": 21.0,
+        "salary_share": 0.4132,
+        "action": "Card rewards and instalment plans; they keep little in savings, so lend with care.",
+        "owner": "Head of Cards"
+      },
+      {
+        "segment": "Everyday bankers",
+        "customers": 3765,
+        "share_of_customers": 0.1842,
+        "deposits": 5196909.26,
+        "share_of_deposits": 0.0543,
+        "card_spend": 24439550.55,
+        "share_of_card_spend": 0.3621,
+        "median_balance": 887.4017,
+        "median_txns": 11.1667,
+        "salary_share": 0.6237,
+        "action": "Win the salary: salary-crediting incentives, and the best audience for personal financing.",
+        "owner": "Head of Product"
+      },
+      {
+        "segment": "Transfers only",
+        "customers": 2097,
+        "share_of_customers": 0.1026,
+        "deposits": 1356099.34,
+        "share_of_deposits": 0.0142,
+        "card_spend": 12463.33,
+        "share_of_card_spend": 0.0002,
+        "median_balance": 421.9933,
+        "median_txns": 5.5,
+        "salary_share": 0.4613,
+        "action": "Get the card into use: in-app activation nudges and first-purchase cashback.",
+        "owner": "Head of Cards"
+      },
+      {
+        "segment": "Occasional users",
+        "customers": 2798,
+        "share_of_customers": 0.1369,
+        "deposits": 934010.84,
+        "share_of_deposits": 0.0098,
+        "card_spend": 352614.03,
+        "share_of_card_spend": 0.0052,
+        "median_balance": 95.3692,
+        "median_txns": 0.8333,
+        "salary_share": 0.0177,
+        "action": "Low-cost re-engagement: bill reminders and DuitNow QR prompts.",
+        "owner": "Head of Product"
+      },
+      {
+        "segment": "Dormant",
+        "customers": 5794,
+        "share_of_customers": 0.2835,
+        "deposits": 3847495.1,
+        "share_of_deposits": 0.0402,
+        "card_spend": 0.0,
+        "share_of_card_spend": 0.0,
+        "median_balance": 20.82,
+        "median_txns": 0.0,
+        "salary_share": 0.0,
+        "action": "Win back only where it is cheap; stop paying bonuses to channels that produce them.",
+        "owner": "Head of Growth"
+      }
+    ]
+  }
+}
