@@ -216,3 +216,27 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ==========================================================
+# Project-specific
+# ==========================================================
+
+# Raw source data: run_pipeline.py regenerates it from a fixed seed.
+# A small sample of each source is committed in data/sample/ instead.
+data/raw/*
+!data/raw/.gitkeep
+
+# DuckDB warehouse file: rebuilt by run_pipeline.py
+data/warehouse/*
+!data/warehouse/.gitkeep
+*.duckdb
+*.duckdb.wal
+
+# Excel lock files (created while the KPI pack is open)
+~$*
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
