@@ -243,7 +243,7 @@ def run(con):
     scorecard = con.execute("SELECT * FROM kpi.scorecard").df()
     scorecard["month_start"] = pd.to_datetime(scorecard["month_start"])
 
-    with tempfile.TemporaryDirectory(prefix="kelip_excel_check_") as tmp:
+    with tempfile.TemporaryDirectory(prefix="kelip_excel_check_", ignore_cleanup_errors=True) as tmp:
         recalculated = recalculate(soffice, PACK, Path(tmp))
         with warnings.catch_warnings():   # openpyxl cannot parse LibreOffice's chart XML; the chart is not checked
             warnings.filterwarnings("ignore", message="Unable to read chart", category=UserWarning)

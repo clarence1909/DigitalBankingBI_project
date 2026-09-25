@@ -11,8 +11,13 @@ All data is synthetic. Kelip Bank is a fictional Malaysian digital bank.
 
 import argparse
 import importlib
+import os
 import sys
 import time
+
+# Write the Excel files byte-identically on every machine (see src/__init__.py). It must be
+# set before openpyxl is first imported, which happens in check_environment().
+os.environ["OPENPYXL_LXML"] = "False"
 
 MIN_PYTHON = (3, 11)
 
