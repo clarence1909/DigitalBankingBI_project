@@ -1,0 +1,163 @@
+start_month,ekyc_flow,is_in_ekyc_test,step_no,step_name,applicants
+2024-09-01,control,False,1,Sign-up started,1545
+2024-09-01,control,False,2,Phone verified,1390
+2024-09-01,control,False,3,MyKad scanned,1226
+2024-09-01,control,False,4,Selfie liveness passed,864
+2024-09-01,control,False,5,eKYC approved,814
+2024-09-01,control,False,6,Account opened,783
+2024-10-01,control,False,1,Sign-up started,1653
+2024-10-01,control,False,2,Phone verified,1475
+2024-10-01,control,False,3,MyKad scanned,1243
+2024-10-01,control,False,4,Selfie liveness passed,874
+2024-10-01,control,False,5,eKYC approved,835
+2024-10-01,control,False,6,Account opened,808
+2024-11-01,control,False,1,Sign-up started,1933
+2024-11-01,control,False,2,Phone verified,1753
+2024-11-01,control,False,3,MyKad scanned,1515
+2024-11-01,control,False,4,Selfie liveness passed,1049
+2024-11-01,control,False,5,eKYC approved,991
+2024-11-01,control,False,6,Account opened,965
+2024-12-01,control,False,1,Sign-up started,2065
+2024-12-01,control,False,2,Phone verified,1821
+2024-12-01,control,False,3,MyKad scanned,1558
+2024-12-01,control,False,4,Selfie liveness passed,1101
+2024-12-01,control,False,5,eKYC approved,1048
+2024-12-01,control,False,6,Account opened,1019
+2025-01-01,control,False,1,Sign-up started,1954
+2025-01-01,control,False,2,Phone verified,1736
+2025-01-01,control,False,3,MyKad scanned,1503
+2025-01-01,control,False,4,Selfie liveness passed,1044
+2025-01-01,control,False,5,eKYC approved,987
+2025-01-01,control,False,6,Account opened,955
+2025-02-01,control,False,1,Sign-up started,2001
+2025-02-01,control,False,2,Phone verified,1770
+2025-02-01,control,False,3,MyKad scanned,1517
+2025-02-01,control,False,4,Selfie liveness passed,1071
+2025-02-01,control,False,5,eKYC approved,1020
+2025-02-01,control,False,6,Account opened,988
+2025-03-01,control,False,1,Sign-up started,2420
+2025-03-01,control,False,2,Phone verified,2166
+2025-03-01,control,False,3,MyKad scanned,1854
+2025-03-01,control,False,4,Selfie liveness passed,1269
+2025-03-01,control,False,5,eKYC approved,1213
+2025-03-01,control,False,6,Account opened,1170
+2025-04-01,control,False,1,Sign-up started,2301
+2025-04-01,control,False,2,Phone verified,2047
+2025-04-01,control,False,3,MyKad scanned,1768
+2025-04-01,control,False,4,Selfie liveness passed,1247
+2025-04-01,control,False,5,eKYC approved,1177
+2025-04-01,control,False,6,Account opened,1135
+2025-05-01,control,False,1,Sign-up started,2458
+2025-05-01,control,False,2,Phone verified,2151
+2025-05-01,control,False,3,MyKad scanned,1845
+2025-05-01,control,False,4,Selfie liveness passed,1279
+2025-05-01,control,False,5,eKYC approved,1214
+2025-05-01,control,False,6,Account opened,1180
+2025-06-01,control,False,1,Sign-up started,2367
+2025-06-01,control,False,2,Phone verified,2114
+2025-06-01,control,False,3,MyKad scanned,1825
+2025-06-01,control,False,4,Selfie liveness passed,1279
+2025-06-01,control,False,5,eKYC approved,1213
+2025-06-01,control,False,6,Account opened,1168
+2025-07-01,control,False,1,Sign-up started,2570
+2025-07-01,control,False,2,Phone verified,2261
+2025-07-01,control,False,3,MyKad scanned,1917
+2025-07-01,control,False,4,Selfie liveness passed,1344
+2025-07-01,control,False,5,eKYC approved,1276
+2025-07-01,control,False,6,Account opened,1240
+2025-08-01,control,False,1,Sign-up started,2639
+2025-08-01,control,False,2,Phone verified,2344
+2025-08-01,control,False,3,MyKad scanned,2018
+2025-08-01,control,False,4,Selfie liveness passed,1392
+2025-08-01,control,False,5,eKYC approved,1332
+2025-08-01,control,False,6,Account opened,1282
+2025-09-01,control,False,1,Sign-up started,2612
+2025-09-01,control,False,2,Phone verified,2356
+2025-09-01,control,False,3,MyKad scanned,2016
+2025-09-01,control,False,4,Selfie liveness passed,1413
+2025-09-01,control,False,5,eKYC approved,1344
+2025-09-01,control,False,6,Account opened,1294
+2025-10-01,control,False,1,Sign-up started,2859
+2025-10-01,control,False,2,Phone verified,2545
+2025-10-01,control,False,3,MyKad scanned,2193
+2025-10-01,control,False,4,Selfie liveness passed,1526
+2025-10-01,control,False,5,eKYC approved,1436
+2025-10-01,control,False,6,Account opened,1388
+2025-11-01,control,False,1,Sign-up started,3000
+2025-11-01,control,False,2,Phone verified,2674
+2025-11-01,control,False,3,MyKad scanned,2282
+2025-11-01,control,False,4,Selfie liveness passed,1585
+2025-11-01,control,False,5,eKYC approved,1518
+2025-11-01,control,False,6,Account opened,1465
+2025-12-01,control,False,1,Sign-up started,3230
+2025-12-01,control,False,2,Phone verified,2865
+2025-12-01,control,False,3,MyKad scanned,2481
+2025-12-01,control,False,4,Selfie liveness passed,1743
+2025-12-01,control,False,5,eKYC approved,1647
+2025-12-01,control,False,6,Account opened,1598
+2026-01-01,control,False,1,Sign-up started,3143
+2026-01-01,control,False,2,Phone verified,2801
+2026-01-01,control,False,3,MyKad scanned,2434
+2026-01-01,control,False,4,Selfie liveness passed,1689
+2026-01-01,control,False,5,eKYC approved,1595
+2026-01-01,control,False,6,Account opened,1547
+2026-02-01,control,True,1,Sign-up started,1456
+2026-02-01,control,True,2,Phone verified,1289
+2026-02-01,control,True,3,MyKad scanned,1092
+2026-02-01,control,True,4,Selfie liveness passed,760
+2026-02-01,control,True,5,eKYC approved,729
+2026-02-01,control,True,6,Account opened,714
+2026-02-01,guided,True,1,Sign-up started,1587
+2026-02-01,guided,True,2,Phone verified,1420
+2026-02-01,guided,True,3,MyKad scanned,1236
+2026-02-01,guided,True,4,Selfie liveness passed,924
+2026-02-01,guided,True,5,eKYC approved,886
+2026-02-01,guided,True,6,Account opened,852
+2026-03-01,control,True,1,Sign-up started,1682
+2026-03-01,control,True,2,Phone verified,1480
+2026-03-01,control,True,3,MyKad scanned,1258
+2026-03-01,control,True,4,Selfie liveness passed,888
+2026-03-01,control,True,5,eKYC approved,840
+2026-03-01,control,True,6,Account opened,815
+2026-03-01,guided,True,1,Sign-up started,1680
+2026-03-01,guided,True,2,Phone verified,1477
+2026-03-01,guided,True,3,MyKad scanned,1268
+2026-03-01,guided,True,4,Selfie liveness passed,976
+2026-03-01,guided,True,5,eKYC approved,926
+2026-03-01,guided,True,6,Account opened,905
+2026-04-01,control,True,1,Sign-up started,1558
+2026-04-01,control,True,2,Phone verified,1382
+2026-04-01,control,True,3,MyKad scanned,1189
+2026-04-01,control,True,4,Selfie liveness passed,820
+2026-04-01,control,True,5,eKYC approved,777
+2026-04-01,control,True,6,Account opened,757
+2026-04-01,guided,True,1,Sign-up started,1625
+2026-04-01,guided,True,2,Phone verified,1464
+2026-04-01,guided,True,3,MyKad scanned,1237
+2026-04-01,guided,True,4,Selfie liveness passed,943
+2026-04-01,guided,True,5,eKYC approved,884
+2026-04-01,guided,True,6,Account opened,857
+2026-05-01,guided,False,1,Sign-up started,3490
+2026-05-01,guided,False,2,Phone verified,3087
+2026-05-01,guided,False,3,MyKad scanned,2664
+2026-05-01,guided,False,4,Selfie liveness passed,2069
+2026-05-01,guided,False,5,eKYC approved,1962
+2026-05-01,guided,False,6,Account opened,1901
+2026-06-01,guided,False,1,Sign-up started,3452
+2026-06-01,guided,False,2,Phone verified,3081
+2026-06-01,guided,False,3,MyKad scanned,2629
+2026-06-01,guided,False,4,Selfie liveness passed,2016
+2026-06-01,guided,False,5,eKYC approved,1914
+2026-06-01,guided,False,6,Account opened,1866
+2026-07-01,guided,False,1,Sign-up started,3669
+2026-07-01,guided,False,2,Phone verified,3257
+2026-07-01,guided,False,3,MyKad scanned,2785
+2026-07-01,guided,False,4,Selfie liveness passed,2122
+2026-07-01,guided,False,5,eKYC approved,2025
+2026-07-01,guided,False,6,Account opened,1965
+2026-08-01,guided,False,1,Sign-up started,3639
+2026-08-01,guided,False,2,Phone verified,3210
+2026-08-01,guided,False,3,MyKad scanned,2771
+2026-08-01,guided,False,4,Selfie liveness passed,2146
+2026-08-01,guided,False,5,eKYC approved,2020
+2026-08-01,guided,False,6,Account opened,1957
