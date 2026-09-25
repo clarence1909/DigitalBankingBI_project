@@ -1,0 +1,7 @@
+product_code,product_name,product_family,tenor_months,is_deposit
+SAV-01,Kelip Savings,CASA,,true
+FD-06M,"Fixed deposit, 6 months",FD,6,true
+FD-12M,"Fixed deposit, 12 months",FD,12,true
+FD-RAYA25,"Raya FD promotion, 6 months",FD,6,true
+DC-01,Kelip debit card,CARD,,false
+PF-01,Kelip personal financing,PF,,false

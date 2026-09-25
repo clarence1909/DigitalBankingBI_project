@@ -1,23 +1,18 @@
 """Rebuild the Kelip Bank BI project from raw files with one command.
 
-    python run_pipeline.py
+    python run_pipeline.py                 # everything
+    python run_pipeline.py --from model    # skip regenerating and reloading the data
+    python run_pipeline.py --only check    # one stage
 
-The stages run in order: generate, load, model, check, publish. Each stage is
-filled in during the build; until then it says which phase adds it.
+The stages run in order: generate, load, model, check, publish.
 
 All data is synthetic. Kelip Bank is a fictional Malaysian digital bank.
 """
 
+import argparse
 import importlib
 import sys
 import time
-from pathlib import Path
-
-ROOT = Path(__file__).resolve().parent
-
-# Pipeline outputs. Both stay out of Git (see .gitignore).
-RAW_DIR = ROOT / "data" / "raw"
-WAREHOUSE = ROOT / "data" / "warehouse" / "kelip_bank.duckdb"
 
 MIN_PYTHON = (3, 11)
 
@@ -31,6 +26,7 @@ PACKAGES = {
     "pyarrow": "pyarrow",
     "sklearn": "scikit-learn",
     "scipy": "scipy",
+    "yaml": "pyyaml",
 }
 
 
@@ -59,40 +55,62 @@ def check_environment() -> None:
 
 def generate() -> None:
     """Simulate 24 months of the six source systems into data/raw/."""
-    print("      Not built yet (P2)")
+    from src.generate import simulate
+    simulate.main()
 
 
 def load() -> None:
     """Load every source into DuckDB as text and log the row counts."""
-    print("      Not built yet (P2)")
+    from src import load as loader
+    loader.main()
 
 
 def model() -> None:
     """Build the staging, mart and KPI layers from sql/."""
-    print("      Not built yet (P3 and P4)")
+    from src import model as modeller
+    modeller.main()
 
 
 def check() -> None:
-    """Run the data quality checks and reconciliations in sql/tests/."""
-    print("      Not built yet (P4)")
+    """Run the data quality checks, reconciliations and ad-hoc queries."""
+    from src import checks
+    checks.main()
 
 
 def publish() -> None:
-    """Export the Tableau extracts, charts and the Excel KPI pack."""
-    print("      Not built yet (P5 and P6)")
+    """Run the analyses, then export the Tableau extracts, Excel KPI pack and docs."""
+    from src import publish as publisher
+    publisher.main()
 
 
 STAGES = [generate, load, model, check, publish]
+STAGE_NAMES = [s.__name__ for s in STAGES]
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Rebuild the Kelip Bank BI project.")
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument("--from", dest="start", choices=STAGE_NAMES, help="start at this stage")
+    group.add_argument("--only", choices=STAGE_NAMES, help="run just this stage")
+    args = parser.parse_args()
+
+    if args.only:
+        selected = [s for s in STAGES if s.__name__ == args.only]
+    elif args.start:
+        selected = STAGES[STAGE_NAMES.index(args.start):]
+    else:
+        selected = STAGES
+
     started = time.perf_counter()
     print("Kelip Bank BI pipeline (all data is synthetic)\n")
     check_environment()
 
-    for number, stage in enumerate(STAGES, start=1):
+    for stage in selected:
+        number = STAGE_NAMES.index(stage.__name__) + 1
         print(f"\n[{number}/{len(STAGES)}] {stage.__name__}: {stage.__doc__}")
+        stage_started = time.perf_counter()
         stage()
+        print(f"      done in {time.perf_counter() - stage_started:.1f} s")
 
     print(f"\nFinished in {time.perf_counter() - started:.1f} s")
 

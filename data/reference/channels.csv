@@ -1,0 +1,7 @@
+channel,channel_name,channel_group,is_paid,cost_model,sort_order
+organic,Organic (app stores and direct),organic,false,none,1
+google_search,Google Search,paid_media,true,cost per click,2
+meta_ads,Meta (Facebook and Instagram),paid_media,true,cost per impression,3
+tiktok,TikTok,paid_media,true,cost per impression,4
+referral,Refer a friend,bonus_scheme,true,cost per account opened,5
+affiliate,Cashback affiliates,bonus_scheme,true,cost per account opened plus platform fee,6

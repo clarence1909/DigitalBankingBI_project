@@ -1,0 +1,4 @@
+credit_policy_code,credit_policy,policy_name,effective_from,effective_to,description
+CP-2025-01,v1,Launch policy,2025-01-01,2025-06-30,Grades A to C only; debt service ratio up to 40%
+CP-2025-07,v2,Growth policy,2025-07-01,2025-12-31,Opened grade D and thin-file applicants; debt service ratio up to 60%
+CP-2026-01,v3,Tightened policy,2026-01-01,2099-12-31,Grade D by exception only; debt service ratio up to 45%; +0.5% price on C and D
