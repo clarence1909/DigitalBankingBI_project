@@ -1,0 +1,13 @@
+merchant_category,category_group,purchases,spend,pct_of_spend,median_purchase
+Online marketplaces,Online,50961,9421463.63,19.70,100.29
+Groceries,Everyday,45501,7996069.84,16.80,88.51
+Airlines and travel,Travel,7876,5179150.38,10.90,434.96
+Fuel,Transport,22218,4648803.28,9.70,110.80
+Restaurants,Dining,35450,4470772.16,9.40,62.79
+Clothing,Shopping,10495,2711310.14,5.70,145.28
+Fast food,Dining,36843,2654848.67,5.60,33.27
+Electronics,Shopping,4878,2595072.88,5.40,348.64
+E-hailing and taxis,Transport,27312,2460851.16,5.20,41.78
+Telco and bills,Bills,12916,2424525.22,5.10,97.06
+Streaming and subscriptions,Online,15300,1673007.35,3.50,53.70
+Pharmacies,Everyday,9278,1473260.70,3.10,77.36

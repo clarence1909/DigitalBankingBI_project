@@ -1,0 +1,3 @@
+ekyc_flow,accounts_opened,median_minutes_to_open,p90_hours_to_open,pct_manual_review,avg_liveness_retries
+control,3833,10.80,21.50,11.60,1.15
+guided,10303,10.20,22.40,12.20,0.64

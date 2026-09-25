@@ -1,0 +1,77 @@
+# Rebuilds the whole project from raw files on every push, and fails if anything
+# the definition of done depends on breaks: a blocking data quality check, a
+# reconciliation, the Excel pack's recalculation check, a break-test, a rerun
+# that gives different numbers, or a broken link in the docs.
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Rebuild and check
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install LibreOffice, which recalculates the Excel pack
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends libreoffice-calc
+
+      - name: Install the pinned packages
+        run: pip install -r requirements.txt
+
+      - name: Rebuild everything from raw files
+        run: python run_pipeline.py
+
+      - name: Break the data on purpose and confirm every check catches it
+        run: python -m src.break_tests
+
+      - name: Rerun from scratch and confirm the outputs are identical
+        run: |
+          find dashboards/extracts reports docs data/sample -type f ! -name '*.png' -print0 \
+            | sort -z | xargs -0 sha256sum > "$RUNNER_TEMP/first_run.sha256"
+          python run_pipeline.py
+          sha256sum --check --quiet "$RUNNER_TEMP/first_run.sha256"
+          echo "Both runs produced identical files"
+
+      - name: Compare the rebuild with the committed outputs
+        run: |
+          if git diff --quiet -- . ':(exclude)*.png'; then
+            echo "The committed outputs match the rebuild"
+          else
+            git diff --stat -- . ':(exclude)*.png'
+            echo "::warning::The rebuild differs from the committed outputs. Run python run_pipeline.py and commit the results."
+          fi
+
+      - name: Check every relative link in the Markdown files
+        run: python -m src.check_links
+
+      - name: Keep the reports for download
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: kelip-bank-reports
+          path: |
+            reports/
+            dashboards/extracts/
+            docs/
+          retention-days: 14
