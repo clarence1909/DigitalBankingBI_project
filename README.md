@@ -31,29 +31,29 @@ You need Python 3.11 or newer and Git.
 
 1. Clone the repository:
 
-```bash
+   ```bash
    git clone https://github.com/clarence1909/DigitalBankingBI_project.git
    cd DigitalBankingBI_project
-```
+   ```
 
 2. Create and activate a virtual environment:
 
-```bash
+   ```bash
    python3 -m venv .venv          # Windows: python -m venv .venv
    source .venv/bin/activate      # Windows: .venv\Scripts\activate
-```
+   ```
 
 3. Install the pinned packages:
 
-```bash
+   ```bash
    pip install -r requirements.txt
-```
+   ```
 
 4. Rebuild everything:
 
-```bash
+   ```bash
    python run_pipeline.py
-```
+   ```
 
 ## Project structure
 
