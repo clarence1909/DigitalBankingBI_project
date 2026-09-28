@@ -1,0 +1,35 @@
+/// Debit card spend by merchant category over the last six months.
+table 'Card spend by category'
+
+	/// Debit card spend in the category, in RM millions.
+	measure 'Category card spend' = SUM('Card spend by category'[Spend in RM millions])
+		formatString: \R\M#,##0.0\m
+
+	column 'Merchant category'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Merchant category
+		sortByColumn: 'Category order'
+
+	column 'Spend in RM millions'
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: Spend in RM millions
+
+	column 'Category order'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Category order
+
+	partition 'Card spend by category' = m
+		mode: import
+		source =
+				let
+				    Source = #"Dashboard data",
+				    #"Kept Card spend by category rows" = Table.SelectRows(Source, each [chart] = "card_categories"),
+				    #"Kept columns" = Table.SelectColumns(#"Kept Card spend by category rows", {"category", "rm_millions", "sort"}),
+				    #"Renamed columns" = Table.RenameColumns(#"Kept columns", {{"category", "Merchant category"}, {"rm_millions", "Spend in RM millions"}, {"sort", "Category order"}})
+				in
+				    #"Renamed columns"

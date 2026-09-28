@@ -1,7 +1,8 @@
 # Rebuilds the whole project from raw files on every push, and fails if anything
 # the definition of done depends on breaks: a blocking data quality check, a
-# reconciliation, the Excel pack's recalculation check, a break-test, a rerun
-# that gives different numbers, or a broken link in the docs.
+# reconciliation, the Excel pack's recalculation check, the Power BI report's
+# checks (the pipeline's own, and Microsoft's schema validation), a break-test,
+# a rerun that gives different files, or a broken link in the docs.
 name: CI
 
 on:
@@ -39,15 +40,39 @@ jobs:
       - name: Install the pinned packages
         run: pip install -r requirements.txt
 
+      - name: Set up Node.js for Microsoft's Power BI report CLI
+        uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: .github/powerbi-cli/package-lock.json
+
+      - name: Install Microsoft's Power BI report CLI, pinned by its lockfile
+        run: npm ci --prefix .github/powerbi-cli --no-audit --no-fund
+
       - name: Rebuild everything from raw files
         run: python run_pipeline.py
+
+      - name: Validate the Power BI report against Microsoft's published schemas
+        # The CLI downloads the schemas as it runs, so a network blip gets two more tries
+        run: |
+          for attempt in 1 2 3; do
+            .github/powerbi-cli/node_modules/.bin/powerbi-report-author validate \
+              dashboards/powerbi/KelipBank.pbip --format text | tee "$RUNNER_TEMP/pbir.txt"
+            if tail -n 1 "$RUNNER_TEMP/pbir.txt" | grep -qx "0 error(s), 0 warning(s); result=succeeded"; then
+              exit 0
+            fi
+            echo "Attempt $attempt did not pass cleanly"
+            sleep 20
+          done
+          exit 1
 
       - name: Break the data on purpose and confirm every check catches it
         run: python -m src.break_tests
 
       - name: Rerun from scratch and confirm the outputs are identical
         run: |
-          find dashboards/extracts reports docs data/sample -type f ! -name '*.png' -print0 \
+          find dashboards reports docs data/sample -type f ! -name '*.png' -print0 \
             | sort -z | xargs -0 sha256sum > "$RUNNER_TEMP/first_run.sha256"
           python run_pipeline.py
           sha256sum --check --quiet "$RUNNER_TEMP/first_run.sha256"
@@ -70,8 +95,9 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: kelip-bank-reports
+          include-hidden-files: true
           path: |
             reports/
-            dashboards/extracts/
+            dashboards/
             docs/
           retention-days: 14

@@ -38,7 +38,7 @@ flowchart LR
         ref["reference<br/>KPI catalog, plan, lookups"]
     end
     subgraph outputs["Outputs"]
-        tableau["Tableau Public dashboard"]
+        powerbi["Power BI report"]
         excel["Excel KPI pack"]
         report["Insights report and charts"]
         docs["Generated dictionaries"]
@@ -47,14 +47,14 @@ flowchart LR
     ref --> stg
     ref --> kpi
     marts --> dq
-    kpi --> tableau
+    kpi --> powerbi
     kpi --> excel
     kpi --> report
     marts --> report
     marts --> docs
 ```
 
-Everything runs on one laptop or one CI runner with free tools: Python for generation, loading, orchestration, analysis and exports; DuckDB for the warehouse and all transformation, in SQL; Tableau Public for the dashboard; openpyxl for the Excel pack; GitHub Actions for CI.
+Everything runs on one laptop or one CI runner with free tools: Python for generation, loading, orchestration, analysis and exports; DuckDB for the warehouse and all transformation, in SQL; Power BI Desktop for the dashboard; openpyxl for the Excel pack; GitHub Actions for CI.
 
 ## 2. The pipeline
 
@@ -66,7 +66,7 @@ One command, `python run_pipeline.py`, runs five stages in order. `--from <stage
 | load | Copies every source into the `raw` schema as text, and logs row counts | `src/load.py` | 14 s |
 | model | Runs the SQL files in `sql/01_staging`, `02_marts` and `03_kpi`, in file-name order | `src/model.py`, `sql/` | 25 s |
 | check | Runs 25 SQL checks and the schema check, builds the reconciliation tables, runs the ad-hoc queries; stops on any error | `src/checks.py`, `sql/tests/`, `sql/adhoc/` | 4 s |
-| publish | Analyses and charts, the Executive page picture, dashboard extracts, the Excel pack and its recalculation check, generated docs, the insights report | `src/publish.py` | 16 s |
+| publish | Analyses and charts, the Executive page picture, dashboard extracts and `dashboard_data.csv`, the Power BI report and its check, the Excel pack and its recalculation check, generated docs, the insights report | `src/publish.py` | 16 s |
 
 \* On a 2-core cloud machine; about 90 seconds in all, well inside the five-minute target.
 
@@ -110,14 +110,14 @@ Four layers of defence, all run automatically:
 1. **Checks as SQL** ([`sql/tests/`](../sql/tests/)). Each file is a query that returns the rows that fail, with a header giving its name, severity and description. `error` stops the pipeline before anything is published; `warn` is reported; `info` reports numbers worth knowing. They cover unique keys, orphan records, funnel order, unmapped labels, balances, KPI ranges, arrears logic, catalog coverage and the marketing sheet.
 2. **Two reconciliations that tie to the sen.** Every deposit account's month-end balance equals last month's plus the month's ledger postings (by Malaysia-time date), for every account in every month; and every settled card authorisation posts to the ledger once, for the same amount, on its settlement date.
 3. **Break-tests** ([`src/break_tests.py`](../src/break_tests.py)). Each error and warning check is run on clean data, again after breaking the data on purpose inside a transaction, and again after rolling back. A check that does not fire when it should is itself a failure.
-4. **Documentation checks.** `sql/schema.yml` must describe exactly the tables and columns in the warehouse, the Excel pack is recalculated in LibreOffice and compared with the warehouse, and every relative link in the docs must resolve.
+4. **Output and documentation checks.** `sql/schema.yml` must describe exactly the tables and columns in the warehouse, the Excel pack is recalculated in LibreOffice and compared with the warehouse, the Power BI report's fields, Power Query and layout are checked against its model and data (and, in CI, against Microsoft's published report schemas), and every relative link in the docs must resolve.
 
 ## 6. Outputs
 
 | Output | Built from | Notes |
 |---|---|---|
-| Dashboard extracts ([`dashboards/extracts/`](../dashboards/extracts/)) | `kpi`, `marts` | Tidy CSVs, one per dashboard need, that Tableau, Power BI or Qlik can read as they are |
-| Tableau Public dashboard | The extracts | Built by hand following the [build notes](../dashboards/tableau_build_notes.md); five pages |
+| Dashboard extracts ([`dashboards/extracts/`](../dashboards/extracts/)) | `kpi`, `marts` | Tidy CSVs, one per dashboard need, that Power BI, Tableau or Qlik can read as they are, and `dashboard_data.csv`, the one table the Power BI report reads |
+| Power BI report ([`dashboards/powerbi/`](../dashboards/powerbi/)) | `dashboard_data.csv` | A Power BI project (TMDL model, PBIR report) written by code and checked on every build; five pages, opened and shared as the [build notes](../dashboards/powerbi_build_notes.md) describe |
 | Excel KPI pack ([`reports/kelip_bank_kpi_pack.xlsx`](../reports/kelip_bank_kpi_pack.xlsx)) | `kpi`, `reference` | 827 live formulas, a month and a KPI picker, conditional formatting, one chart, and a Checks sheet |
 | Executive page picture | `kpi.scorecard` | The README's hero image, rebuilt each run |
 | Five analyses and the insights report | `marts`, `kpi` | Each chart titled with its takeaway; each finding with a recommendation, owner and measure |
@@ -137,7 +137,8 @@ The full reasoning, with the alternatives considered, is in the [decision log](d
 | Checks return failing rows, graded by severity | A failure shows exactly which records are wrong; warnings do not block a month-end report |
 | KPIs in one long table plus a catalog | One definition per KPI; the scorecard, dashboard and Excel pack read the same numbers |
 | Direction-aware status with an amber band | "Worse than plan" means different things for deposits and for arrears |
-| Tidy CSV extracts for the dashboard | Any BI tool can read them; Tableau Public cannot connect to a database anyway |
+| Tidy CSV extracts for the dashboard | Any BI tool can read them, and the report needs no database driver to refresh |
+| A generated Power BI project, checked on every build | The report is rebuilt with the data, its titles stay true, and a broken chart fails the build instead of a demo |
 | Formula-driven Excel, checked in LibreOffice | The pack recalculates when the reader picks a month; the check proves it has no errors and matches SQL |
 | Bayesian A/B test with rules set in advance | A direct probability that the new flow is better; a sample-ratio check and guardrail stop a misleading win |
 
@@ -152,7 +153,7 @@ The layers and the checks would stay the same; the tools around them would chang
 | SQL files run in order by Python | dbt models with the same layers, scheduled by an orchestrator (Airflow, Dagster or Control-M), with lineage |
 | `sql/tests/` and the break-tests | dbt tests or a data quality tool, with alerts to each data owner and a data quality dashboard |
 | `data/reference/` CSVs | Governed reference data with owners and change control; the plan from the FP&A planning system |
-| Tableau Public | Tableau Server or Cloud behind single sign-on, certified data sources, and row-level security |
+| Power BI Desktop and a file | The Power BI service (a Fabric workspace) behind single sign-on, with a certified semantic model, scheduled refresh through a gateway, deployment pipelines and row-level security |
 | The Excel pack | The same pack published to a controlled SharePoint site, or scheduled PDF subscriptions |
 | GitHub Actions | CI/CD with development, test and production environments, code review, change approval and segregation of duties |
 | Monthly rebuild | Daily refresh for operational pages; official month-end figures only after Finance signs off the close |
@@ -163,7 +164,7 @@ The layers and the checks would stay the same; the tools around them would chang
 - **Real customer data.** Sign data-sharing and access agreements, mask or tokenise personal data outside production, and test on masked copies. Nothing in the design depends on the data being simulated.
 - **Real-time streaming.** Capture changes from core banking (for example with Debezium) into a stream (Kafka), and land them in the warehouse within minutes for operational pages such as fraud and onboarding. Keep monthly reporting on the reconciled batch layer, so official numbers still tie to the ledger.
 - **A production credit-scoring model.** Build it under a model risk management framework: independent validation, monitoring of drift and performance, and fairness testing. The vintage curves and roll rates here are the monitoring such a model needs.
-- **Row-level security.** An entitlement table mapping each user to what they may see (department, product, customer segment), applied as Tableau user filters or secure views in the warehouse, with access audited.
+- **Row-level security.** An entitlement table mapping each user to what they may see (department, product, customer segment), applied as Power BI row-level security roles or secure views in the warehouse, with access audited.
 
 ## 10. Performance and scale
 

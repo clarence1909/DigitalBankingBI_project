@@ -1,0 +1,9 @@
+{
+  "name": "kelip-bank-powerbi-cli",
+  "private": true,
+  "description": "Pins Microsoft's Power BI report CLI, which CI uses to validate the generated report against Microsoft's published schemas.",
+  "license": "MIT",
+  "dependencies": {
+    "@microsoft/powerbi-report-authoring-cli": "0.4.0"
+  }
+}

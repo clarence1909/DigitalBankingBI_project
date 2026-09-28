@@ -130,7 +130,7 @@ The six plan KPIs, each month, with actual, plan, % of plan, variance, prior mon
 - Status follows each KPI's direction (higher or lower is better) and its amber band from the KPI catalog.
 - Status is always shown as an icon and a word as well as a colour.
 - The same figures appear in the warehouse (`kpi.scorecard`), on the dashboard's Executive page and in the Excel pack.
-- *Met by:* `sql/03_kpi/08_scorecard.sql`, the Executive page, the Excel pack's Scorecard sheet.
+- *Met by:* `sql/03_kpi/08_scorecard.sql`; the dashboard's Executive page, for the latest month; and the Excel pack's Scorecard sheet, for any month, with variance and prior month.
 
 **BR-02 KPI definitions** (Must; all questions)
 About 20 KPIs, each with a definition, formula, owner, unit, direction, amber band, target or monthly plan, and SQL source.
@@ -180,10 +180,10 @@ A monthly insights report with five findings, each with its evidence, a recommen
 ### Delivery
 
 **BR-11 Dashboard** (Must; Q01 to Q21)
-A Tableau Public dashboard with an Executive page and four department pages (Growth, Engagement, Deposits, Credit).
+A Power BI report with an Executive page and four department pages (Growth, Engagement, Deposits, Credit).
 - Uses a colour-blind-safe palette, never shows status by colour alone, and never uses a dual axis.
-- Comes with a [user manual](06_dashboard_user_manual.md) and [build notes](../dashboards/tableau_build_notes.md).
-- *Met by:* the extracts in `dashboards/extracts/`, built into Tableau as described in the build notes.
+- Comes with a [user manual](06_dashboard_user_manual.md) and [build notes](../dashboards/powerbi_build_notes.md).
+- *Met by:* the generated Power BI project [`dashboards/powerbi/KelipBank.pbip`](../dashboards/powerbi/KelipBank.pbip), checked against its model and data on every build ([its check](../reports/powerbi_report_check.md)) and against Microsoft's published report schemas in CI, and opened, checked and shared as the build notes describe.
 
 **BR-12 Excel KPI pack** (Must; Q22)
 A workbook with the scorecard, a trend chart and all KPIs by month, driven by live formulas, with conditional formatting and one chart.
@@ -261,5 +261,5 @@ Every KPI answers at least one question: the catalog's `stakeholder_questions` c
 
 - **Data.** The source files are simulated by a seeded generator, with five stories planted in them on purpose (see the [data sources](02_data_sources.md)). Rates and events are anchored to real Malaysian ones where it matters, such as the July 2025 OPR cut.
 - **Month-end.** Figures are for complete calendar months. Measures that need time to observe (month-3 activity, card activation within 30 days, fixed deposit retention, month-6 delinquency) appear once their window has closed.
-- **Tools.** Only free tools: Python, DuckDB, Tableau Public, Excel files built with openpyxl, and GitHub Actions.
+- **Tools.** Only free tools: Python, DuckDB, Power BI Desktop, Excel files built with openpyxl, and GitHub Actions.
 - **Privacy.** There is no personal data. A real bank would add access controls, masking and retention rules to meet the Personal Data Protection Act 2010 and Bank Negara Malaysia's requirements.

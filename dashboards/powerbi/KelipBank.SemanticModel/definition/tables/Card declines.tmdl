@@ -1,0 +1,42 @@
+/// Declined card payments each month, by reason.
+table 'Card declines'
+
+	/// Card payments declined for the reason.
+	measure 'Declined payments' = SUM('Card declines'[Declines])
+		formatString: #,##0
+
+	column Month
+		dataType: dateTime
+		formatString: mmm yyyy
+		summarizeBy: none
+		sourceColumn: Month
+
+	column Reason
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Reason
+		sortByColumn: 'Reason order'
+
+	column Declines
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: Declines
+
+	column 'Reason order'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Reason order
+
+	partition 'Card declines' = m
+		mode: import
+		source =
+				let
+				    Source = #"Dashboard data",
+				    #"Kept Card declines rows" = Table.SelectRows(Source, each [chart] = "declines"),
+				    #"Kept columns" = Table.SelectColumns(#"Kept Card declines rows", {"month", "series", "count"}),
+				    #"Renamed columns" = Table.RenameColumns(#"Kept columns", {{"month", "Month"}, {"series", "Reason"}, {"count", "Declines"}}),
+				    #"Added Reason order" = Table.AddColumn(#"Renamed columns", "Reason order", each List.PositionOf({"Insufficient funds", "Wrong PIN", "Suspected fraud"}, [Reason]) + 1, Int64.Type)
+				in
+				    #"Added Reason order"

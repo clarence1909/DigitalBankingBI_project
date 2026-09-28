@@ -1,0 +1,146 @@
+/// Each KPI by month, with its plan or target. The measures pick one KPI each.
+table 'KPI trend'
+
+	/// K01: Applicants who started sign-up in the app in the month. Split it by Series to compare it with plan or target.
+	measure 'Applications started' = CALCULATE(SUM('KPI trend'[Count]), 'KPI trend'[KPI ID] = "K01")
+		formatString: #,##0
+
+	/// K02: Accounts opened in the month. Split it by Series to compare it with plan or target.
+	measure 'New customers' = CALCULATE(SUM('KPI trend'[Count]), 'KPI trend'[KPI ID] = "K02")
+		formatString: #,##0
+
+	/// K03: Share of the month's applicants who went on to open an account. Actual values only.
+	measure 'Onboarding conversion' = CALCULATE(SUM('KPI trend'[Rate]), 'KPI trend'[KPI ID] = "K03", 'KPI trend'[Series] = "Actual")
+		formatString: 0.0%
+
+	/// K04: Share of applicants who scanned their MyKad and then passed the selfie liveness check. Actual values only.
+	measure 'eKYC completion rate' = CALCULATE(SUM('KPI trend'[Rate]), 'KPI trend'[KPI ID] = "K04", 'KPI trend'[Series] = "Actual")
+		formatString: 0.0%
+
+	/// K06: Share of customers who opened three months earlier and made a transaction themselves this month. Actual values only.
+	measure 'Month-3 active rate' = CALCULATE(SUM('KPI trend'[Rate]), 'KPI trend'[KPI ID] = "K06", 'KPI trend'[Series] = "Actual")
+		formatString: 0.0%
+
+	/// K07: Customers who made at least one transaction themselves in the month. Split it by Series to compare it with plan or target.
+	measure 'Monthly active customers' = CALCULATE(SUM('KPI trend'[Count]), 'KPI trend'[KPI ID] = "K07")
+		formatString: #,##0
+
+	/// K08: Share of customers with an open account who were active in the month. Actual values only.
+	measure 'Active customer rate' = CALCULATE(SUM('KPI trend'[Rate]), 'KPI trend'[KPI ID] = "K08", 'KPI trend'[Series] = "Actual")
+		formatString: 0.0%
+
+	/// K09: Transactions active customers made themselves, per customer. Split it by Series to compare it with plan or target.
+	measure 'Transactions per active customer' = CALCULATE(SUM('KPI trend'[Number]), 'KPI trend'[KPI ID] = "K09")
+		formatString: #,##0.0
+
+	/// K10: Share of the month's new customers with a debit card who activated it within 30 days of opening. Actual values only.
+	measure 'Card activation within 30 days' = CALCULATE(SUM('KPI trend'[Rate]), 'KPI trend'[KPI ID] = "K10", 'KPI trend'[Series] = "Actual")
+		formatString: 0.0%
+
+	/// K11: Card purchases settled and posted to the ledger in the month. Split it by Series to compare it with plan or target.
+	measure 'Debit card spend' = CALCULATE(SUM('KPI trend'[RM millions]), 'KPI trend'[KPI ID] = "K11")
+		formatString: \R\M#,##0.0\m
+
+	/// K13: Savings (CASA) and fixed deposit balances at month end. Split it by Series to compare it with plan or target.
+	measure 'Total deposits' = CALCULATE(SUM('KPI trend'[RM millions]), 'KPI trend'[KPI ID] = "K13")
+		formatString: \R\M#,##0.0\m
+
+	/// K14: Share of deposits held in current and savings accounts rather than fixed deposits. Split it by Series to compare it with plan or target.
+	measure 'CASA ratio' = CALCULATE(SUM('KPI trend'[Rate]), 'KPI trend'[KPI ID] = "K14")
+		formatString: 0.0%
+
+	/// K15: Annualised interest cost of deposits. Split it by Series to compare it with plan or target.
+	measure 'Cost of funds' = CALCULATE(SUM('KPI trend'[Rate]), 'KPI trend'[KPI ID] = "K15")
+		formatString: 0.00%
+
+	/// K17: Personal financing principal outstanding at month end. Split it by Series to compare it with plan or target.
+	measure 'Gross loans' = CALCULATE(SUM('KPI trend'[RM millions]), 'KPI trend'[KPI ID] = "K17")
+		formatString: \R\M#,##0.0\m
+
+	/// K18: Personal financing paid out in the month. Split it by Series to compare it with plan or target.
+	measure 'Financing disbursed' = CALCULATE(SUM('KPI trend'[RM millions]), 'KPI trend'[KPI ID] = "K18")
+		formatString: \R\M#,##0.0\m
+
+	/// K19: Share of the loan book 30 or more days past due. Split it by Series to compare it with plan or target.
+	measure PAR30 = CALCULATE(SUM('KPI trend'[Rate]), 'KPI trend'[KPI ID] = "K19")
+		formatString: 0.00%
+
+	/// K20: Share of the loan book impaired, meaning more than 90 days past due. Split it by Series to compare it with plan or target.
+	measure 'GIL ratio' = CALCULATE(SUM('KPI trend'[Rate]), 'KPI trend'[KPI ID] = "K20")
+		formatString: 0.00%
+
+	/// K21: Share of the loans disbursed six months earlier that have ever been 30+ days past due. Split it by Series to compare it with plan or target.
+	measure 'Early delinquency at month 6' = CALCULATE(SUM('KPI trend'[Rate]), 'KPI trend'[KPI ID] = "K21")
+		formatString: 0.0%
+
+	/// K22: Interest earned on performing financing less interest accrued on deposits. Split it by Series to compare it with plan or target.
+	measure 'Net interest income' = CALCULATE(SUM('KPI trend'[RM]), 'KPI trend'[KPI ID] = "K22")
+		formatString: \R\M#,##0
+
+	column 'KPI ID'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: KPI ID
+
+	column 'KPI name'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: KPI name
+
+	column Month
+		dataType: dateTime
+		formatString: mmm yyyy
+		summarizeBy: none
+		sourceColumn: Month
+
+	column Series
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Series
+
+	column Definition
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Definition
+
+	column Count
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: Count
+
+	column Rate
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: Rate
+
+	column 'RM millions'
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: RM millions
+
+	column RM
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: RM
+
+	column Number
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: Number
+
+	partition 'KPI trend' = m
+		mode: import
+		source =
+				let
+				    Source = #"Dashboard data",
+				    #"Kept KPI trend rows" = Table.SelectRows(Source, each Text.StartsWith([chart], "trend_")),
+				    #"Added KPI ID" = Table.AddColumn(#"Kept KPI trend rows", "KPI ID", each Text.AfterDelimiter([chart], "_"), type text),
+				    #"Kept columns" = Table.SelectColumns(#"Added KPI ID", {"KPI ID", "category", "month", "series", "detail", "count", "rate", "rm_millions", "rm", "number"}),
+				    #"Renamed columns" = Table.RenameColumns(#"Kept columns", {{"category", "KPI name"}, {"month", "Month"}, {"series", "Series"}, {"detail", "Definition"}, {"count", "Count"}, {"rate", "Rate"}, {"rm_millions", "RM millions"}, {"rm", "RM"}, {"number", "Number"}})
+				in
+				    #"Renamed columns"

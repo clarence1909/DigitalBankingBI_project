@@ -209,7 +209,7 @@ def replace_block(text, start, end, lines):
     return text
 
 
-def checks_block(con, excel_summary):
+def checks_block(con, excel_summary, powerbi_summary=None):
     counts = dict(con.execute("SELECT status, count(*) FROM dq.check_results GROUP BY 1").fetchall())
     total = sum(counts.values())
     recon = con.execute("""
@@ -233,15 +233,21 @@ def checks_block(con, excel_summary):
         lines.append(f"- **The Excel pack recalculates cleanly:** {facts['Formulas recalculated']} formulas, "
                      f"{facts['Cells with an error value']} errors, and its values match the warehouse "
                      f"([check](reports/excel_pack_check.md)).")
+    if powerbi_summary:
+        lines.append(f"- **The Power BI report is generated and checked:** all {powerbi_summary['fields']} field "
+                     f"references in its {powerbi_summary['visuals']} visuals resolve to its model, and each of its "
+                     f"{powerbi_summary['tables']} tables' Power Query is replayed on the data "
+                     "([check](reports/powerbi_report_check.md)). CI also validates it against Microsoft's report "
+                     "schemas.")
     lines += [
-        "- **Every error and warning check is proved to work** by breaking the data on purpose "
+        "- **Every error and warning check is proved to work** by breaking the data, or the report, on purpose "
         "([break-tests](reports/break_test_report.md)).",
         "- **Two clean runs give identical files**, checked in CI on every push.",
     ]
     return lines
 
 
-def update_readme(findings, con=None, excel_summary=None):
+def update_readme(findings, con=None, excel_summary=None, powerbi_summary=None):
     picks = [("acquisition", 0), ("deposits", 0), ("credit", 1)]
     block = [START, "", "From the [insights report](reports/insights_report.md), which has five findings, each "
              "with a recommendation, an owner and a measure of success:", ""]
@@ -250,12 +256,12 @@ def update_readme(findings, con=None, excel_summary=None):
     text = README.read_text(encoding="utf-8")
     text = replace_block(text, START, END, block[2:])
     if con is not None:
-        text = replace_block(text, CHECKS_START, CHECKS_END, checks_block(con, excel_summary))
+        text = replace_block(text, CHECKS_START, CHECKS_END, checks_block(con, excel_summary, powerbi_summary))
     README.write_text(text, encoding="utf-8")
 
 
-def write(con, findings, executive, excel_summary=None):
+def write(con, findings, executive, excel_summary=None, powerbi_summary=None):
     recs = recommendations(findings, kpi_facts(con))
     write_report(findings, executive, recs)
-    update_readme(findings, con, excel_summary)
+    update_readme(findings, con, excel_summary, powerbi_summary)
     return REPORT

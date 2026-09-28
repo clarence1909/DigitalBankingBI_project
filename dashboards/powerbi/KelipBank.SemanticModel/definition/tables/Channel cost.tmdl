@@ -1,0 +1,48 @@
+/// Marketing spend per new customer and per customer still active in month 3, by paid channel, for customers who joined up to the last month with a third month of data.
+table 'Channel cost'
+
+	/// Marketing spend divided by the customers the channel brought in.
+	measure 'Cost per customer' = SUM('Channel cost'[Cost in RM])
+		formatString: \R\M#,##0
+
+	column Channel
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Channel
+		sortByColumn: 'Channel rank'
+
+	column 'Cost basis'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Cost basis
+		sortByColumn: 'Cost basis order'
+
+	column 'Cost in RM'
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: Cost in RM
+
+	column 'Channel rank'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Channel rank
+
+	column 'Cost basis order'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Cost basis order
+
+	partition 'Channel cost' = m
+		mode: import
+		source =
+				let
+				    Source = #"Dashboard data",
+				    #"Kept Channel cost rows" = Table.SelectRows(Source, each [chart] = "channel_cost"),
+				    #"Kept columns" = Table.SelectColumns(#"Kept Channel cost rows", {"category", "series", "rm", "sort"}),
+				    #"Renamed columns" = Table.RenameColumns(#"Kept columns", {{"category", "Channel"}, {"series", "Cost basis"}, {"rm", "Cost in RM"}, {"sort", "Channel rank"}}),
+				    #"Added Cost basis order" = Table.AddColumn(#"Renamed columns", "Cost basis order", each List.PositionOf({"Per new customer", "Per customer active in month 3"}, [Cost basis]) + 1, Int64.Type)
+				in
+				    #"Added Cost basis order"

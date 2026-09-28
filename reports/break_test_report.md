@@ -1,8 +1,8 @@
 # Break-test report
 
-Each check is run on the clean warehouse, again after breaking the data on purpose inside a transaction, and a third time after rolling the break back. Written by `python -m src.break_tests`.
+Each check is run on the clean warehouse, again after breaking the data on purpose inside a transaction, and a third time after rolling the break back. The Power BI report check is tested the same way on broken copies of the report's files, made in memory; its counts are the problems it reports rather than rows. Written by `python -m src.break_tests`.
 
-| Check | Severity | How the data was broken | Rows before | After break | After restore | Result |
+| Check | Severity | How it was broken | Rows before | After break | After restore | Result |
 |---|---|---|---:|---:|---:|---|
 | `unique_customer_id` | error | `INSERT INTO marts.dim_customer SELECT * FROM marts.dim_customer LIMIT 1` | 0 | 1 | 0 | caught and restored |
 | `unique_account_id` | error | `INSERT INTO marts.dim_account SELECT * FROM marts.dim_account LIMIT 1` | 0 | 1 | 0 | caught and restored |
@@ -28,3 +28,16 @@ Each check is run on the clean warehouse, again after breaking the data on purpo
 | `marketing_invoices_missing` | warn | `UPDATE staging.stg_marketing_spend SET spend = NULL, is_missing = true WHERE channel = 'google_search' AND month_start = DATE '2026-07-01'` | 1 | 2 | 1 | caught and restored |
 | `marketing_sheet_total_foots` | warn | `UPDATE staging.stg_marketing_spend SET spend = spend + 1 WHERE row_type = 'spend' AND channel = 'tiktok' AND month_start = DATE '2025-03-01'` | 1 | 2 | 1 | caught and restored |
 | `schema_yml_matches_warehouse` | error | `ALTER TABLE marts.dim_channel ADD COLUMN undocumented_column INTEGER` | 0 | 1 | 0 | caught and restored |
+| `powerbi_report_check` | error | Rename the measure 'CASA ratio' in the model, so the charts that plot it point at nothing | 0 | 2 | 0 | caught and restored |
+| `powerbi_report_check` | error | Colour a series the data does not have: 'Plan' becomes 'Budget' on one chart | 0 | 1 | 0 | caught and restored |
+| `powerbi_report_check` | error | Point the Scorecard table's Power Query at a chart that is not in dashboard_data.csv | 0 | 1 | 0 | caught and restored |
+| `powerbi_report_check` | error | Filter the PAR30 measure on a KPI that is not in the data | 0 | 1 | 0 | caught and restored |
+| `powerbi_report_check` | error | Make a measure add up a column that does not exist | 0 | 1 | 0 | caught and restored |
+| `powerbi_report_check` | error | Sort the funnel's steps by a column the table does not have | 0 | 1 | 0 | caught and restored |
+| `powerbi_report_check` | error | Leave 'Suspected fraud' out of the decline reasons' sort order | 0 | 1 | 0 | caught and restored |
+| `powerbi_report_check` | error | Tell the shared read of the CSV that it has 14 columns, not 15 | 0 | 1 | 0 | caught and restored |
+| `powerbi_report_check` | error | Rename the KPI trend table's Definition column to Actual, which holds unique values in the scorecard, so Power BI would link the two tables | 0 | 1 | 0 | caught and restored |
+| `powerbi_report_check` | error | Widen a page's header past the edge of the page | 0 | 1 | 0 | caught and restored |
+| `powerbi_report_check` | error | Make the scorecard taller, so it overlaps the chart below it | 0 | 1 | 0 | caught and restored |
+| `powerbi_report_check` | error | Drop a comma from a visual's JSON | 0 | 13 | 0 | caught and restored |
+| `powerbi_report_check` | error | Leave the Credit page out of pages.json | 0 | 1 | 0 | caught and restored |

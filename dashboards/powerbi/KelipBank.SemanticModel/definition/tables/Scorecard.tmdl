@@ -1,0 +1,54 @@
+/// The six plan KPIs in the latest month: actual, plan and status.
+table Scorecard
+
+	/// Background colour for a KPI's status: green on plan, amber on watch, red off plan.
+	measure 'Status colour' = SWITCH(SELECTEDVALUE(Scorecard[Status]), "On plan", "#ddf2dd", "Watch", "#fef0cc", "Off plan", "#f8dede")
+
+	column KPI
+		dataType: string
+		summarizeBy: none
+		sourceColumn: KPI
+		sortByColumn: 'KPI order'
+
+	column Actual
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Actual
+
+	column Plan
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Plan
+
+	column '% of plan'
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: none
+		sourceColumn: % of plan
+
+	column Status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Status
+
+	column 'Status label'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Status label
+
+	column 'KPI order'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: KPI order
+
+	partition Scorecard = m
+		mode: import
+		source =
+				let
+				    Source = #"Dashboard data",
+				    #"Kept Scorecard rows" = Table.SelectRows(Source, each [chart] = "tiles"),
+				    #"Kept columns" = Table.SelectColumns(#"Kept Scorecard rows", {"category", "label", "detail", "rate", "status", "status_text", "sort"}),
+				    #"Renamed columns" = Table.RenameColumns(#"Kept columns", {{"category", "KPI"}, {"label", "Actual"}, {"detail", "Plan"}, {"rate", "% of plan"}, {"status", "Status"}, {"status_text", "Status label"}, {"sort", "KPI order"}})
+				in
+				    #"Renamed columns"

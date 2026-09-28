@@ -178,7 +178,8 @@ def kpi_dictionary(con):
                           f"August 2026 ({p['note']})")
                 status = f", {sc['status_label'].get(r.kpi_id)}"
             else:
-                target = f"{show_value(r.target, r.unit)} ({r.target_note})" if not pd.isna(r.target) else "None"
+                note = f" ({r.target_note})" if isinstance(r.target_note, str) and r.target_note.strip() else ""
+                target = f"{show_value(r.target, r.unit)}{note}" if not pd.isna(r.target) else "None"
                 status = ""
             value = latest["value"].get(r.kpi_id)
             month = latest["month_start"].get(r.kpi_id)

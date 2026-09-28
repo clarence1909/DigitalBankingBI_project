@@ -2,6 +2,12 @@
 
 Each design choice in this project and the reason for it, newest first. Add an entry every working session.
 
+## 2026-09-28: Build the dashboard in Power BI, generated from code as a Power BI project
+
+- **Decision:** The dashboard is a Power BI report rather than the Tableau Public dashboard first planned. The publish stage writes it as a Power BI project in `dashboards/powerbi/`: a model in TMDL, where one Power Query reads a tall table, `dashboard_data.csv`, and each table keeps one chart's rows, with a named DAX measure per KPI; and five report pages in PBIR, the JSON format Power BI Desktop saves for version control. Every build checks the report against its model and data, replaying each table's Power Query on the CSV; CI also validates it against Microsoft's published report schemas with Microsoft's report CLI; and the break-tests prove the check catches a broken report.
+- **Why:** Power BI is one of the BI tools the analyst roles this project targets ask for, and Power BI Desktop is free. A report built by hand drifts from the data as soon as the pipeline reruns and cannot be tested; a generated one is rebuilt with everything else, its titles quote the current numbers, and a broken chart fails the build instead of a demo. The project format is plain text, so every change shows in Git, where a `.pbix` file is a binary archive that Git cannot compare.
+- **Alternatives:** Tableau Public, the first plan, gives a free public link, which Power BI cannot (Publish to web needs a work or school account), so the report is shared as a `.pbix` file or PDF instead; a generated Tableau workbook was also built and checked, then dropped to keep one BI tool. Building the report by hand in Power BI Desktop takes a day and cannot be checked in CI. Titles written as DAX measures would update on refresh without a rebuild, but the data changes only when the pipeline reruns, which rewrites the report anyway, and plain titles are easier to read and to check.
+
 ## 2026-09-26: Check the Excel pack by recalculating it in LibreOffice
 
 - **Decision:** After building the pack, open a copy in LibreOffice (headless), recalculate every formula, and compare the results with the warehouse: no error values, no pasted numbers on report sheets, every monthly value, the scorecard and the trend, and every row of the pack's own Checks sheet.

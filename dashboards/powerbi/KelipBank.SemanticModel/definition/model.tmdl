@@ -1,0 +1,20 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: en-US
+
+	annotation __PBI_TimeIntelligenceEnabled = 0
+
+ref table Scorecard
+ref table 'KPI trend'
+ref table 'Channel cost'
+ref table 'New customers by channel'
+ref table 'Sign-up funnel'
+ref table 'Card spend by category'
+ref table 'Card declines'
+ref table 'Customer segments'
+ref table 'Deposit mix'
+ref table 'FD retention'
+ref table Vintage
+ref table 'Roll rates'

@@ -1,8 +1,10 @@
-"""Tidy CSV extracts for the dashboard.
+"""Tidy CSV extracts of the warehouse's KPI layer.
 
-One file per dashboard need, in long (tidy) form where that helps, so Tableau,
-Power BI or Qlik can read them as they are. They are small and committed to
-the repo, which is also what Tableau Public connects to.
+One file per dashboard need, in long (tidy) form where that helps, so Power BI,
+Tableau, Qlik or Excel can read them as they are. They are small and committed
+to the repo, so anyone can explore the numbers without running the pipeline.
+The generated Power BI report reads one table built from the same warehouse,
+dashboard_data.csv (src/export/dashboard_data.py).
 """
 
 from src.config import EXTRACTS_DIR

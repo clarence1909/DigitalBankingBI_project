@@ -1,0 +1,42 @@
+/// New customers each month, by the channel they came from.
+table 'New customers by channel'
+
+	/// New customers from the channel.
+	measure 'Channel new customers' = SUM('New customers by channel'[Customers])
+		formatString: #,##0
+
+	column Month
+		dataType: dateTime
+		formatString: mmm yyyy
+		summarizeBy: none
+		sourceColumn: Month
+
+	column Channel
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Channel
+		sortByColumn: 'Channel order'
+
+	column Customers
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: Customers
+
+	column 'Channel order'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Channel order
+
+	partition 'New customers by channel' = m
+		mode: import
+		source =
+				let
+				    Source = #"Dashboard data",
+				    #"Kept New customers by channel rows" = Table.SelectRows(Source, each [chart] = "new_by_channel"),
+				    #"Kept columns" = Table.SelectColumns(#"Kept New customers by channel rows", {"month", "series", "count"}),
+				    #"Renamed columns" = Table.RenameColumns(#"Kept columns", {{"month", "Month"}, {"series", "Channel"}, {"count", "Customers"}}),
+				    #"Added Channel order" = Table.AddColumn(#"Renamed columns", "Channel order", each List.PositionOf({"Organic", "Google Search", "Meta", "TikTok", "Refer a friend", "Cashback affiliates"}, [Channel]) + 1, Int64.Type)
+				in
+				    #"Added Channel order"

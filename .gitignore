@@ -235,6 +235,12 @@ data/warehouse/*
 # Excel lock files (created while the KPI pack is open)
 ~$*
 
+# Power BI Desktop's own files in the report project (local settings, data cache)
+dashboards/powerbi/**/.pbi/
+
+# Microsoft's Power BI report CLI, installed for CI from .github/powerbi-cli/
+.github/powerbi-cli/node_modules/
+
 # OS and editor files
 .DS_Store
 Thumbs.db

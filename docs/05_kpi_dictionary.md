@@ -78,7 +78,7 @@ Acquisition marketing spend per account opened.
 - **Unit:** Ringgit (RM)
 - **Better when:** lower
 - **Amber band:** 10% of plan or target
-- **Target:** RM25.00 (nan)
+- **Target:** RM25.00
 - **Source:** `kpi.growth_monthly.cac`
 - **Answers:** Q05, Q24
 - **Dashboard page:** Growth
@@ -95,10 +95,10 @@ Share of customers who opened three months earlier and made a transaction themse
 - **Unit:** Percentage
 - **Better when:** higher
 - **Amber band:** 5% of plan or target
-- **Target:** 65.0% (nan)
+- **Target:** 65.0%
 - **Source:** `kpi.growth_monthly.m3_active_rate`
 - **Answers:** Q04, Q05, Q11
-- **Dashboard page:** Growth, Engagement
+- **Dashboard page:** Growth
 - **Latest:** 61.9% in August 2026
 
 ## Onboarding
@@ -114,7 +114,7 @@ Share of the month's applicants who went on to open an account.
 - **Unit:** Percentage
 - **Better when:** higher
 - **Amber band:** 5% of plan or target
-- **Target:** 55.0% (nan)
+- **Target:** 55.0%
 - **Source:** `kpi.growth_monthly.onboarding_conversion`
 - **Answers:** Q07, Q08
 - **Dashboard page:** Growth
@@ -131,7 +131,7 @@ Share of applicants who scanned their MyKad and then passed the selfie liveness 
 - **Unit:** Percentage
 - **Better when:** higher
 - **Amber band:** 5% of plan or target
-- **Target:** 75.0% (nan)
+- **Target:** 75.0%
 - **Source:** `kpi.growth_monthly.ekyc_completion_rate`
 - **Answers:** Q07, Q08
 - **Dashboard page:** Growth
@@ -167,7 +167,7 @@ Share of customers with an open account who were active in the month.
 - **Unit:** Percentage
 - **Better when:** higher
 - **Amber band:** 5% of plan or target
-- **Target:** 65.0% (nan)
+- **Target:** 65.0%
 - **Source:** `kpi.engagement_monthly.active_customer_rate`
 - **Answers:** Q10
 - **Dashboard page:** Engagement
@@ -184,7 +184,7 @@ Transactions active customers made themselves, per customer.
 - **Unit:** Number
 - **Better when:** higher
 - **Amber band:** 10% of plan or target
-- **Target:** 9.0 (nan)
+- **Target:** 9.0
 - **Source:** `kpi.engagement_monthly.txns_per_active_customer`
 - **Answers:** Q10, Q12
 - **Dashboard page:** Engagement
@@ -203,7 +203,7 @@ Share of the month's new customers with a debit card who activated it within 30 
 - **Unit:** Percentage
 - **Better when:** higher
 - **Amber band:** 5% of plan or target
-- **Target:** 65.0% (nan)
+- **Target:** 65.0%
 - **Source:** `kpi.cards_monthly.card_activation_30d`
 - **Answers:** Q11, Q17
 - **Dashboard page:** Engagement
@@ -237,7 +237,7 @@ Share of card authorisation attempts approved.
 - **Unit:** Percentage
 - **Better when:** higher
 - **Amber band:** 1% of plan or target
-- **Target:** 95.0% (nan)
+- **Target:** 95.0%
 - **Source:** `kpi.cards_monthly.card_approval_rate`
 - **Answers:** Q18
 - **Dashboard page:** Engagement
@@ -307,7 +307,7 @@ Share of matured fixed deposit money still with the bank 30 days after maturity.
 - **Unit:** Percentage
 - **Better when:** higher
 - **Amber band:** 5% of plan or target
-- **Target:** 75.0% (nan)
+- **Target:** 75.0%
 - **Source:** `kpi.fd_maturity_outcomes` (retained_30d / matured_amount)
 - **Answers:** Q15
 - **Dashboard page:** Deposits
@@ -377,7 +377,7 @@ Share of the loan book impaired, meaning more than 90 days past due.
 - **Unit:** Percentage
 - **Better when:** lower
 - **Amber band:** 10% of plan or target
-- **Target:** 2.00% (nan)
+- **Target:** 2.00%
 - **Source:** `kpi.credit_monthly.gil_ratio`
 - **Answers:** Q21
 - **Dashboard page:** Credit
@@ -394,7 +394,7 @@ Share of the loans disbursed six months earlier that have ever been 30+ days pas
 - **Unit:** Percentage
 - **Better when:** lower
 - **Amber band:** 10% of plan or target
-- **Target:** 5.00% (nan)
+- **Target:** 5.00%
 - **Source:** `kpi.credit_monthly.early_delinquency_mob6`
 - **Answers:** Q19, Q20
 - **Dashboard page:** Credit
@@ -416,5 +416,5 @@ Interest earned on performing financing less interest accrued on deposits.
 - **Target:** RM200,000 (FY2026 monthly average)
 - **Source:** `kpi.finance_monthly.net_interest_income`
 - **Answers:** Q03, Q23
-- **Dashboard page:** Executive
+- **Dashboard page:** Executive, Deposits
 - **Latest:** RM182,302 in August 2026

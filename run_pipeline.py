@@ -83,7 +83,7 @@ def check() -> None:
 
 
 def publish() -> None:
-    """Run the analyses, then export the Tableau extracts, Excel KPI pack and docs."""
+    """Run the analyses, then write the dashboard extracts, Power BI report, Excel KPI pack and docs."""
     from src import publish as publisher
     publisher.main()
 
