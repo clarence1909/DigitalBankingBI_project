@@ -1,0 +1,21 @@
+raw_label,channel
+affiliate,affiliate
+cashback_partner,affiliate
+adwords,google_search
+google,google_search
+google ads,google_search
+google_search,google_search
+facebook,meta_ads
+fb,meta_ads
+ig,meta_ads
+instagram,meta_ads
+meta,meta_ads
+(direct),organic
+app_store,organic
+organic,organic
+play_store,organic
+friend_invite,referral
+refer_a_friend,referral
+referral,referral
+tik_tok,tiktok
+tiktok,tiktok

@@ -1,0 +1,66 @@
+/// Each customer segment's share of customers, deposits and card spend, with the action proposed for it and its owner.
+table 'Customer segments'
+
+	/// The segment's share of all customers, deposits or card spend.
+	measure 'Segment share' = SUM('Customer segments'[Share of total])
+		formatString: 0%
+
+	/// What the insights report proposes for the segment.
+	measure 'Segment action' = SELECTEDVALUE('Customer segments'[Action])
+
+	/// Who owns the segment's action.
+	measure 'Segment owner' = SELECTEDVALUE('Customer segments'[Owner])
+
+	column Segment
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Segment
+		sortByColumn: 'Segment order'
+
+	column 'Share of'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Share of
+		sortByColumn: 'Share of order'
+
+	column 'Share of total'
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: Share of total
+
+	column Action
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Action
+
+	column Owner
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Owner
+
+	column 'Segment order'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Segment order
+
+	column 'Share of order'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Share of order
+
+	partition 'Customer segments' = m
+		mode: import
+		source =
+				let
+				    Source = #"Dashboard data",
+				    #"Kept Customer segments rows" = Table.SelectRows(Source, each [chart] = "segments"),
+				    #"Kept columns" = Table.SelectColumns(#"Kept Customer segments rows", {"category", "series", "rate", "label", "detail", "sort"}),
+				    #"Renamed columns" = Table.RenameColumns(#"Kept columns", {{"category", "Segment"}, {"series", "Share of"}, {"rate", "Share of total"}, {"label", "Action"}, {"detail", "Owner"}, {"sort", "Segment order"}}),
+				    #"Added Share of order" = Table.AddColumn(#"Renamed columns", "Share of order", each List.PositionOf({"Customers", "Deposits", "Card spend"}, [Share of]) + 1, Int64.Type)
+				in
+				    #"Added Share of order"

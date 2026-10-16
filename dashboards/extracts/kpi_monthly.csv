@@ -1,0 +1,492 @@
+month_start,kpi_id,kpi_name,family,unit,direction,value,plan,status,status_label,status_icon
+2024-09-01,K01,Applications started,growth,count,higher,1545.000000,,,,
+2024-10-01,K01,Applications started,growth,count,higher,1653.000000,,,,
+2024-11-01,K01,Applications started,growth,count,higher,1933.000000,,,,
+2024-12-01,K01,Applications started,growth,count,higher,2065.000000,,,,
+2025-01-01,K01,Applications started,growth,count,higher,1954.000000,,,,
+2025-02-01,K01,Applications started,growth,count,higher,2001.000000,,,,
+2025-03-01,K01,Applications started,growth,count,higher,2420.000000,,,,
+2025-04-01,K01,Applications started,growth,count,higher,2301.000000,,,,
+2025-05-01,K01,Applications started,growth,count,higher,2458.000000,,,,
+2025-06-01,K01,Applications started,growth,count,higher,2367.000000,,,,
+2025-07-01,K01,Applications started,growth,count,higher,2570.000000,,,,
+2025-08-01,K01,Applications started,growth,count,higher,2639.000000,,,,
+2025-09-01,K01,Applications started,growth,count,higher,2612.000000,,,,
+2025-10-01,K01,Applications started,growth,count,higher,2859.000000,,,,
+2025-11-01,K01,Applications started,growth,count,higher,3000.000000,,,,
+2025-12-01,K01,Applications started,growth,count,higher,3230.000000,,,,
+2026-01-01,K01,Applications started,growth,count,higher,3143.000000,,,,
+2026-02-01,K01,Applications started,growth,count,higher,3043.000000,,,,
+2026-03-01,K01,Applications started,growth,count,higher,3362.000000,,,,
+2026-04-01,K01,Applications started,growth,count,higher,3183.000000,,,,
+2026-05-01,K01,Applications started,growth,count,higher,3490.000000,,,,
+2026-06-01,K01,Applications started,growth,count,higher,3452.000000,,,,
+2026-07-01,K01,Applications started,growth,count,higher,3669.000000,,,,
+2026-08-01,K01,Applications started,growth,count,higher,3639.000000,,,,
+2024-09-01,K02,New customers,growth,count,higher,776.000000,800.000000,AMBER,Watch,●
+2024-10-01,K02,New customers,growth,count,higher,810.000000,850.000000,AMBER,Watch,●
+2024-11-01,K02,New customers,growth,count,higher,970.000000,950.000000,GREEN,On plan,▲
+2024-12-01,K02,New customers,growth,count,higher,1012.000000,1000.000000,GREEN,On plan,▲
+2025-01-01,K02,New customers,growth,count,higher,951.000000,1000.000000,AMBER,Watch,●
+2025-02-01,K02,New customers,growth,count,higher,989.000000,1050.000000,AMBER,Watch,●
+2025-03-01,K02,New customers,growth,count,higher,1173.000000,1100.000000,GREEN,On plan,▲
+2025-04-01,K02,New customers,growth,count,higher,1140.000000,1150.000000,AMBER,Watch,●
+2025-05-01,K02,New customers,growth,count,higher,1171.000000,1200.000000,AMBER,Watch,●
+2025-06-01,K02,New customers,growth,count,higher,1166.000000,1250.000000,AMBER,Watch,●
+2025-07-01,K02,New customers,growth,count,higher,1248.000000,1300.000000,AMBER,Watch,●
+2025-08-01,K02,New customers,growth,count,higher,1274.000000,1300.000000,AMBER,Watch,●
+2025-09-01,K02,New customers,growth,count,higher,1301.000000,1350.000000,AMBER,Watch,●
+2025-10-01,K02,New customers,growth,count,higher,1380.000000,1400.000000,AMBER,Watch,●
+2025-11-01,K02,New customers,growth,count,higher,1465.000000,1450.000000,GREEN,On plan,▲
+2025-12-01,K02,New customers,growth,count,higher,1600.000000,1550.000000,GREEN,On plan,▲
+2026-01-01,K02,New customers,growth,count,higher,1546.000000,1600.000000,AMBER,Watch,●
+2026-02-01,K02,New customers,growth,count,higher,1561.000000,1650.000000,AMBER,Watch,●
+2026-03-01,K02,New customers,growth,count,higher,1721.000000,1700.000000,GREEN,On plan,▲
+2026-04-01,K02,New customers,growth,count,higher,1616.000000,1750.000000,AMBER,Watch,●
+2026-05-01,K02,New customers,growth,count,higher,1906.000000,1800.000000,GREEN,On plan,▲
+2026-06-01,K02,New customers,growth,count,higher,1860.000000,1850.000000,GREEN,On plan,▲
+2026-07-01,K02,New customers,growth,count,higher,1966.000000,1900.000000,GREEN,On plan,▲
+2026-08-01,K02,New customers,growth,count,higher,1972.000000,1950.000000,GREEN,On plan,▲
+2024-09-01,K03,Onboarding conversion,onboarding,pct,higher,0.506796,,,,
+2024-10-01,K03,Onboarding conversion,onboarding,pct,higher,0.488808,,,,
+2024-11-01,K03,Onboarding conversion,onboarding,pct,higher,0.499224,,,,
+2024-12-01,K03,Onboarding conversion,onboarding,pct,higher,0.493462,,,,
+2025-01-01,K03,Onboarding conversion,onboarding,pct,higher,0.488741,,,,
+2025-02-01,K03,Onboarding conversion,onboarding,pct,higher,0.493753,,,,
+2025-03-01,K03,Onboarding conversion,onboarding,pct,higher,0.483471,,,,
+2025-04-01,K03,Onboarding conversion,onboarding,pct,higher,0.493264,,,,
+2025-05-01,K03,Onboarding conversion,onboarding,pct,higher,0.480065,,,,
+2025-06-01,K03,Onboarding conversion,onboarding,pct,higher,0.493452,,,,
+2025-07-01,K03,Onboarding conversion,onboarding,pct,higher,0.482490,,,,
+2025-08-01,K03,Onboarding conversion,onboarding,pct,higher,0.485790,,,,
+2025-09-01,K03,Onboarding conversion,onboarding,pct,higher,0.495406,,,,
+2025-10-01,K03,Onboarding conversion,onboarding,pct,higher,0.485484,,,,
+2025-11-01,K03,Onboarding conversion,onboarding,pct,higher,0.488333,,,,
+2025-12-01,K03,Onboarding conversion,onboarding,pct,higher,0.494737,,,,
+2026-01-01,K03,Onboarding conversion,onboarding,pct,higher,0.492205,,,,
+2026-02-01,K03,Onboarding conversion,onboarding,pct,higher,0.514624,,,,
+2026-03-01,K03,Onboarding conversion,onboarding,pct,higher,0.511600,,,,
+2026-04-01,K03,Onboarding conversion,onboarding,pct,higher,0.507069,,,,
+2026-05-01,K03,Onboarding conversion,onboarding,pct,higher,0.544699,,,,
+2026-06-01,K03,Onboarding conversion,onboarding,pct,higher,0.540556,,,,
+2026-07-01,K03,Onboarding conversion,onboarding,pct,higher,0.535568,,,,
+2026-08-01,K03,Onboarding conversion,onboarding,pct,higher,0.537785,,,,
+2024-09-01,K04,eKYC completion rate,onboarding,pct,higher,0.704731,,,,
+2024-10-01,K04,eKYC completion rate,onboarding,pct,higher,0.703138,,,,
+2024-11-01,K04,eKYC completion rate,onboarding,pct,higher,0.692409,,,,
+2024-12-01,K04,eKYC completion rate,onboarding,pct,higher,0.706675,,,,
+2025-01-01,K04,eKYC completion rate,onboarding,pct,higher,0.694611,,,,
+2025-02-01,K04,eKYC completion rate,onboarding,pct,higher,0.705999,,,,
+2025-03-01,K04,eKYC completion rate,onboarding,pct,higher,0.684466,,,,
+2025-04-01,K04,eKYC completion rate,onboarding,pct,higher,0.705317,,,,
+2025-05-01,K04,eKYC completion rate,onboarding,pct,higher,0.693225,,,,
+2025-06-01,K04,eKYC completion rate,onboarding,pct,higher,0.700822,,,,
+2025-07-01,K04,eKYC completion rate,onboarding,pct,higher,0.701095,,,,
+2025-08-01,K04,eKYC completion rate,onboarding,pct,higher,0.689792,,,,
+2025-09-01,K04,eKYC completion rate,onboarding,pct,higher,0.700893,,,,
+2025-10-01,K04,eKYC completion rate,onboarding,pct,higher,0.695850,,,,
+2025-11-01,K04,eKYC completion rate,onboarding,pct,higher,0.694566,,,,
+2025-12-01,K04,eKYC completion rate,onboarding,pct,higher,0.702539,,,,
+2026-01-01,K04,eKYC completion rate,onboarding,pct,higher,0.693919,,,,
+2026-02-01,K04,eKYC completion rate,onboarding,pct,higher,0.723368,,,,
+2026-03-01,K04,eKYC completion rate,onboarding,pct,higher,0.737926,,,,
+2026-04-01,K04,eKYC completion rate,onboarding,pct,higher,0.726711,,,,
+2026-05-01,K04,eKYC completion rate,onboarding,pct,higher,0.776652,,,,
+2026-06-01,K04,eKYC completion rate,onboarding,pct,higher,0.766831,,,,
+2026-07-01,K04,eKYC completion rate,onboarding,pct,higher,0.761939,,,,
+2026-08-01,K04,eKYC completion rate,onboarding,pct,higher,0.774450,,,,
+2024-09-01,K05,Cost per new customer (CAC),growth,rm,lower,24.633106,,,,
+2024-10-01,K05,Cost per new customer (CAC),growth,rm,lower,24.610210,,,,
+2024-11-01,K05,Cost per new customer (CAC),growth,rm,lower,24.003155,,,,
+2024-12-01,K05,Cost per new customer (CAC),growth,rm,lower,24.582095,,,,
+2025-01-01,K05,Cost per new customer (CAC),growth,rm,lower,25.446814,,,,
+2025-02-01,K05,Cost per new customer (CAC),growth,rm,lower,22.732902,,,,
+2025-03-01,K05,Cost per new customer (CAC),growth,rm,lower,23.245661,,,,
+2025-04-01,K05,Cost per new customer (CAC),growth,rm,lower,22.938474,,,,
+2025-05-01,K05,Cost per new customer (CAC),growth,rm,lower,22.257250,,,,
+2025-06-01,K05,Cost per new customer (CAC),growth,rm,lower,23.053353,,,,
+2025-07-01,K05,Cost per new customer (CAC),growth,rm,lower,25.070152,,,,
+2025-08-01,K05,Cost per new customer (CAC),growth,rm,lower,22.798195,,,,
+2025-09-01,K05,Cost per new customer (CAC),growth,rm,lower,22.959508,,,,
+2025-10-01,K05,Cost per new customer (CAC),growth,rm,lower,23.366942,,,,
+2025-11-01,K05,Cost per new customer (CAC),growth,rm,lower,24.687352,,,,
+2025-12-01,K05,Cost per new customer (CAC),growth,rm,lower,22.771050,,,,
+2026-01-01,K05,Cost per new customer (CAC),growth,rm,lower,22.386093,,,,
+2026-02-01,K05,Cost per new customer (CAC),growth,rm,lower,22.805074,,,,
+2026-03-01,K05,Cost per new customer (CAC),growth,rm,lower,22.969419,,,,
+2026-04-01,K05,Cost per new customer (CAC),growth,rm,lower,22.809233,,,,
+2026-05-01,K05,Cost per new customer (CAC),growth,rm,lower,20.868494,,,,
+2026-06-01,K05,Cost per new customer (CAC),growth,rm,lower,21.728468,,,,
+2026-07-01,K05,Cost per new customer (CAC),growth,rm,lower,21.629008,,,,
+2024-12-01,K06,Month-3 active rate,growth,pct,higher,0.617268,,,,
+2025-01-01,K06,Month-3 active rate,growth,pct,higher,0.623457,,,,
+2025-02-01,K06,Month-3 active rate,growth,pct,higher,0.622680,,,,
+2025-03-01,K06,Month-3 active rate,growth,pct,higher,0.631423,,,,
+2025-04-01,K06,Month-3 active rate,growth,pct,higher,0.629863,,,,
+2025-05-01,K06,Month-3 active rate,growth,pct,higher,0.640040,,,,
+2025-06-01,K06,Month-3 active rate,growth,pct,higher,0.626598,,,,
+2025-07-01,K06,Month-3 active rate,growth,pct,higher,0.661404,,,,
+2025-08-01,K06,Month-3 active rate,growth,pct,higher,0.627669,,,,
+2025-09-01,K06,Month-3 active rate,growth,pct,higher,0.646655,,,,
+2025-10-01,K06,Month-3 active rate,growth,pct,higher,0.621795,,,,
+2025-11-01,K06,Month-3 active rate,growth,pct,higher,0.627159,,,,
+2025-12-01,K06,Month-3 active rate,growth,pct,higher,0.644889,,,,
+2026-01-01,K06,Month-3 active rate,growth,pct,higher,0.633333,,,,
+2026-02-01,K06,Month-3 active rate,growth,pct,higher,0.595904,,,,
+2026-03-01,K06,Month-3 active rate,growth,pct,higher,0.598750,,,,
+2026-04-01,K06,Month-3 active rate,growth,pct,higher,0.628719,,,,
+2026-05-01,K06,Month-3 active rate,growth,pct,higher,0.633568,,,,
+2026-06-01,K06,Month-3 active rate,growth,pct,higher,0.626380,,,,
+2026-07-01,K06,Month-3 active rate,growth,pct,higher,0.626856,,,,
+2026-08-01,K06,Month-3 active rate,growth,pct,higher,0.618573,,,,
+2024-09-01,K07,Monthly active customers,engagement,count,higher,714.000000,700.000000,GREEN,On plan,▲
+2024-10-01,K07,Monthly active customers,engagement,count,higher,1338.000000,1400.000000,AMBER,Watch,●
+2024-11-01,K07,Monthly active customers,engagement,count,higher,1984.000000,2100.000000,RED,Off plan,▼
+2024-12-01,K07,Monthly active customers,engagement,count,higher,2666.000000,2800.000000,AMBER,Watch,●
+2025-01-01,K07,Monthly active customers,engagement,count,higher,3292.000000,3400.000000,AMBER,Watch,●
+2025-02-01,K07,Monthly active customers,engagement,count,higher,3835.000000,4000.000000,AMBER,Watch,●
+2025-03-01,K07,Monthly active customers,engagement,count,higher,4576.000000,4700.000000,AMBER,Watch,●
+2025-04-01,K07,Monthly active customers,engagement,count,higher,5263.000000,5400.000000,AMBER,Watch,●
+2025-05-01,K07,Monthly active customers,engagement,count,higher,5907.000000,6100.000000,AMBER,Watch,●
+2025-06-01,K07,Monthly active customers,engagement,count,higher,6615.000000,6800.000000,AMBER,Watch,●
+2025-07-01,K07,Monthly active customers,engagement,count,higher,7379.000000,7500.000000,AMBER,Watch,●
+2025-08-01,K07,Monthly active customers,engagement,count,higher,8065.000000,8200.000000,AMBER,Watch,●
+2025-09-01,K07,Monthly active customers,engagement,count,higher,8815.000000,8900.000000,AMBER,Watch,●
+2025-10-01,K07,Monthly active customers,engagement,count,higher,9488.000000,9700.000000,AMBER,Watch,●
+2025-11-01,K07,Monthly active customers,engagement,count,higher,10370.000000,10500.000000,AMBER,Watch,●
+2025-12-01,K07,Monthly active customers,engagement,count,higher,11201.000000,11300.000000,AMBER,Watch,●
+2026-01-01,K07,Monthly active customers,engagement,count,higher,12000.000000,12100.000000,AMBER,Watch,●
+2026-02-01,K07,Monthly active customers,engagement,count,higher,12794.000000,12900.000000,AMBER,Watch,●
+2026-03-01,K07,Monthly active customers,engagement,count,higher,13772.000000,13700.000000,GREEN,On plan,▲
+2026-04-01,K07,Monthly active customers,engagement,count,higher,14515.000000,14500.000000,GREEN,On plan,▲
+2026-05-01,K07,Monthly active customers,engagement,count,higher,15643.000000,15300.000000,GREEN,On plan,▲
+2026-06-01,K07,Monthly active customers,engagement,count,higher,16516.000000,16200.000000,GREEN,On plan,▲
+2026-07-01,K07,Monthly active customers,engagement,count,higher,17527.000000,17100.000000,GREEN,On plan,▲
+2026-08-01,K07,Monthly active customers,engagement,count,higher,18522.000000,18000.000000,GREEN,On plan,▲
+2024-09-01,K08,Active customer rate,engagement,pct,higher,0.920103,,,,
+2024-10-01,K08,Active customer rate,engagement,pct,higher,0.843632,,,,
+2024-11-01,K08,Active customer rate,engagement,pct,higher,0.780181,,,,
+2024-12-01,K08,Active customer rate,engagement,pct,higher,0.754173,,,,
+2025-01-01,K08,Active customer rate,engagement,pct,higher,0.741608,,,,
+2025-02-01,K08,Active customer rate,engagement,pct,higher,0.712693,,,,
+2025-03-01,K08,Active customer rate,engagement,pct,higher,0.703567,,,,
+2025-04-01,K08,Active customer rate,engagement,pct,higher,0.694785,,,,
+2025-05-01,K08,Active customer rate,engagement,pct,higher,0.680295,,,,
+2025-06-01,K08,Active customer rate,engagement,pct,higher,0.675966,,,,
+2025-07-01,K08,Active customer rate,engagement,pct,higher,0.673328,,,,
+2025-08-01,K08,Active customer rate,engagement,pct,higher,0.663022,,,,
+2025-09-01,K08,Active customer rate,engagement,pct,higher,0.659115,,,,
+2025-10-01,K08,Active customer rate,engagement,pct,higher,0.647027,,,,
+2025-11-01,K08,Active customer rate,engagement,pct,higher,0.646630,,,,
+2025-12-01,K08,Active customer rate,engagement,pct,higher,0.639181,,,,
+2026-01-01,K08,Active customer rate,engagement,pct,higher,0.632045,,,,
+2026-02-01,K08,Active customer rate,engagement,pct,higher,0.625991,,,,
+2026-03-01,K08,Active customer rate,engagement,pct,higher,0.624439,,,,
+2026-04-01,K08,Active customer rate,engagement,pct,higher,0.616401,,,,
+2026-05-01,K08,Active customer rate,engagement,pct,higher,0.617471,,,,
+2026-06-01,K08,Active customer rate,engagement,pct,higher,0.609829,,,,
+2026-07-01,K08,Active customer rate,engagement,pct,higher,0.606030,,,,
+2026-08-01,K08,Active customer rate,engagement,pct,higher,0.602322,,,,
+2024-09-01,K09,Transactions per active customer,engagement,number,higher,7.057423,,,,
+2024-10-01,K09,Transactions per active customer,engagement,number,higher,8.109865,,,,
+2024-11-01,K09,Transactions per active customer,engagement,number,higher,8.646673,,,,
+2024-12-01,K09,Transactions per active customer,engagement,number,higher,8.883346,,,,
+2025-01-01,K09,Transactions per active customer,engagement,number,higher,9.100851,,,,
+2025-02-01,K09,Transactions per active customer,engagement,number,higher,9.381226,,,,
+2025-03-01,K09,Transactions per active customer,engagement,number,higher,9.720498,,,,
+2025-04-01,K09,Transactions per active customer,engagement,number,higher,9.692951,,,,
+2025-05-01,K09,Transactions per active customer,engagement,number,higher,9.852379,,,,
+2025-06-01,K09,Transactions per active customer,engagement,number,higher,9.905669,,,,
+2025-07-01,K09,Transactions per active customer,engagement,number,higher,9.984009,,,,
+2025-08-01,K09,Transactions per active customer,engagement,number,higher,9.989461,,,,
+2025-09-01,K09,Transactions per active customer,engagement,number,higher,9.972660,,,,
+2025-10-01,K09,Transactions per active customer,engagement,number,higher,9.999262,,,,
+2025-11-01,K09,Transactions per active customer,engagement,number,higher,10.063259,,,,
+2025-12-01,K09,Transactions per active customer,engagement,number,higher,10.022052,,,,
+2026-01-01,K09,Transactions per active customer,engagement,number,higher,10.071000,,,,
+2026-02-01,K09,Transactions per active customer,engagement,number,higher,10.130686,,,,
+2026-03-01,K09,Transactions per active customer,engagement,number,higher,10.127215,,,,
+2026-04-01,K09,Transactions per active customer,engagement,number,higher,10.243541,,,,
+2026-05-01,K09,Transactions per active customer,engagement,number,higher,10.208975,,,,
+2026-06-01,K09,Transactions per active customer,engagement,number,higher,10.279244,,,,
+2026-07-01,K09,Transactions per active customer,engagement,number,higher,10.229874,,,,
+2026-08-01,K09,Transactions per active customer,engagement,number,higher,10.326207,,,,
+2024-09-01,K10,Card activation within 30 days,cards,pct,higher,0.604207,,,,
+2024-10-01,K10,Card activation within 30 days,cards,pct,higher,0.557461,,,,
+2024-11-01,K10,Card activation within 30 days,cards,pct,higher,0.610542,,,,
+2024-12-01,K10,Card activation within 30 days,cards,pct,higher,0.560000,,,,
+2025-01-01,K10,Card activation within 30 days,cards,pct,higher,0.564444,,,,
+2025-02-01,K10,Card activation within 30 days,cards,pct,higher,0.617689,,,,
+2025-03-01,K10,Card activation within 30 days,cards,pct,higher,0.616687,,,,
+2025-04-01,K10,Card activation within 30 days,cards,pct,higher,0.613692,,,,
+2025-05-01,K10,Card activation within 30 days,cards,pct,higher,0.591358,,,,
+2025-06-01,K10,Card activation within 30 days,cards,pct,higher,0.617925,,,,
+2025-07-01,K10,Card activation within 30 days,cards,pct,higher,0.568235,,,,
+2025-08-01,K10,Card activation within 30 days,cards,pct,higher,0.605696,,,,
+2025-09-01,K10,Card activation within 30 days,cards,pct,higher,0.582796,,,,
+2025-10-01,K10,Card activation within 30 days,cards,pct,higher,0.591097,,,,
+2025-11-01,K10,Card activation within 30 days,cards,pct,higher,0.583661,,,,
+2025-12-01,K10,Card activation within 30 days,cards,pct,higher,0.563896,,,,
+2026-01-01,K10,Card activation within 30 days,cards,pct,higher,0.588025,,,,
+2026-02-01,K10,Card activation within 30 days,cards,pct,higher,0.616962,,,,
+2026-03-01,K10,Card activation within 30 days,cards,pct,higher,0.595179,,,,
+2026-04-01,K10,Card activation within 30 days,cards,pct,higher,0.590179,,,,
+2026-05-01,K10,Card activation within 30 days,cards,pct,higher,0.575920,,,,
+2026-06-01,K10,Card activation within 30 days,cards,pct,higher,0.584166,,,,
+2026-07-01,K10,Card activation within 30 days,cards,pct,higher,0.582660,,,,
+2024-09-01,K11,Debit card spend,cards,rm,higher,319970.430000,,,,
+2024-10-01,K11,Debit card spend,cards,rm,higher,759451.540000,,,,
+2024-11-01,K11,Debit card spend,cards,rm,higher,1283662.450000,,,,
+2024-12-01,K11,Debit card spend,cards,rm,higher,1791308.220000,,,,
+2025-01-01,K11,Debit card spend,cards,rm,higher,2828194.610000,,,,
+2025-02-01,K11,Debit card spend,cards,rm,higher,3446472.160000,,,,
+2025-03-01,K11,Debit card spend,cards,rm,higher,4070805.420000,,,,
+2025-04-01,K11,Debit card spend,cards,rm,higher,4518433.100000,,,,
+2025-05-01,K11,Debit card spend,cards,rm,higher,4980276.140000,,,,
+2025-06-01,K11,Debit card spend,cards,rm,higher,5833708.460000,,,,
+2025-07-01,K11,Debit card spend,cards,rm,higher,7044832.330000,,,,
+2025-08-01,K11,Debit card spend,cards,rm,higher,7896663.580000,,,,
+2025-09-01,K11,Debit card spend,cards,rm,higher,8363593.400000,,,,
+2025-10-01,K11,Debit card spend,cards,rm,higher,9258956.850000,,,,
+2025-11-01,K11,Debit card spend,cards,rm,higher,10085542.410000,,,,
+2025-12-01,K11,Debit card spend,cards,rm,higher,10605785.650000,,,,
+2026-01-01,K11,Debit card spend,cards,rm,higher,10850337.550000,,,,
+2026-02-01,K11,Debit card spend,cards,rm,higher,11546068.500000,,,,
+2026-03-01,K11,Debit card spend,cards,rm,higher,12377731.850000,,,,
+2026-04-01,K11,Debit card spend,cards,rm,higher,13315520.800000,,,,
+2026-05-01,K11,Debit card spend,cards,rm,higher,14247942.110000,,,,
+2026-06-01,K11,Debit card spend,cards,rm,higher,15116130.470000,,,,
+2026-07-01,K11,Debit card spend,cards,rm,higher,15628972.270000,,,,
+2026-08-01,K11,Debit card spend,cards,rm,higher,16940845.530000,,,,
+2024-09-01,K12,Card approval rate,cards,pct,higher,0.956155,,,,
+2024-10-01,K12,Card approval rate,cards,pct,higher,0.951657,,,,
+2024-11-01,K12,Card approval rate,cards,pct,higher,0.954969,,,,
+2024-12-01,K12,Card approval rate,cards,pct,higher,0.952537,,,,
+2025-01-01,K12,Card approval rate,cards,pct,higher,0.953978,,,,
+2025-02-01,K12,Card approval rate,cards,pct,higher,0.952992,,,,
+2025-03-01,K12,Card approval rate,cards,pct,higher,0.951196,,,,
+2025-04-01,K12,Card approval rate,cards,pct,higher,0.953925,,,,
+2025-05-01,K12,Card approval rate,cards,pct,higher,0.951583,,,,
+2025-06-01,K12,Card approval rate,cards,pct,higher,0.952233,,,,
+2025-07-01,K12,Card approval rate,cards,pct,higher,0.953467,,,,
+2025-08-01,K12,Card approval rate,cards,pct,higher,0.951964,,,,
+2025-09-01,K12,Card approval rate,cards,pct,higher,0.952837,,,,
+2025-10-01,K12,Card approval rate,cards,pct,higher,0.953391,,,,
+2025-11-01,K12,Card approval rate,cards,pct,higher,0.951394,,,,
+2025-12-01,K12,Card approval rate,cards,pct,higher,0.949865,,,,
+2026-01-01,K12,Card approval rate,cards,pct,higher,0.953109,,,,
+2026-02-01,K12,Card approval rate,cards,pct,higher,0.952940,,,,
+2026-03-01,K12,Card approval rate,cards,pct,higher,0.950784,,,,
+2026-04-01,K12,Card approval rate,cards,pct,higher,0.951122,,,,
+2026-05-01,K12,Card approval rate,cards,pct,higher,0.950864,,,,
+2026-06-01,K12,Card approval rate,cards,pct,higher,0.953251,,,,
+2026-07-01,K12,Card approval rate,cards,pct,higher,0.952931,,,,
+2026-08-01,K12,Card approval rate,cards,pct,higher,0.952671,,,,
+2024-09-01,K13,Total deposits,deposits,rm,higher,2433161.920000,2500000.000000,AMBER,Watch,●
+2024-10-01,K13,Total deposits,deposits,rm,higher,5297467.550000,5000000.000000,GREEN,On plan,▲
+2024-11-01,K13,Total deposits,deposits,rm,higher,8106996.940000,8000000.000000,GREEN,On plan,▲
+2024-12-01,K13,Total deposits,deposits,rm,higher,11606855.610000,11000000.000000,GREEN,On plan,▲
+2025-01-01,K13,Total deposits,deposits,rm,higher,15752900.840000,14000000.000000,GREEN,On plan,▲
+2025-02-01,K13,Total deposits,deposits,rm,higher,20237397.550000,17500000.000000,GREEN,On plan,▲
+2025-03-01,K13,Total deposits,deposits,rm,higher,25400315.960000,21000000.000000,GREEN,On plan,▲
+2025-04-01,K13,Total deposits,deposits,rm,higher,31896287.250000,25000000.000000,GREEN,On plan,▲
+2025-05-01,K13,Total deposits,deposits,rm,higher,38498323.380000,29000000.000000,GREEN,On plan,▲
+2025-06-01,K13,Total deposits,deposits,rm,higher,43554311.300000,33000000.000000,GREEN,On plan,▲
+2025-07-01,K13,Total deposits,deposits,rm,higher,49919742.790000,37500000.000000,GREEN,On plan,▲
+2025-08-01,K13,Total deposits,deposits,rm,higher,55283152.270000,42000000.000000,GREEN,On plan,▲
+2025-09-01,K13,Total deposits,deposits,rm,higher,60465024.800000,47000000.000000,GREEN,On plan,▲
+2025-10-01,K13,Total deposits,deposits,rm,higher,64932588.210000,52000000.000000,GREEN,On plan,▲
+2025-11-01,K13,Total deposits,deposits,rm,higher,70203165.040000,57500000.000000,GREEN,On plan,▲
+2025-12-01,K13,Total deposits,deposits,rm,higher,76447304.160000,63000000.000000,GREEN,On plan,▲
+2026-01-01,K13,Total deposits,deposits,rm,higher,82512299.600000,69000000.000000,GREEN,On plan,▲
+2026-02-01,K13,Total deposits,deposits,rm,higher,89736398.070000,75000000.000000,GREEN,On plan,▲
+2026-03-01,K13,Total deposits,deposits,rm,higher,95421287.240000,81000000.000000,GREEN,On plan,▲
+2026-04-01,K13,Total deposits,deposits,rm,higher,102411594.060000,87500000.000000,GREEN,On plan,▲
+2026-05-01,K13,Total deposits,deposits,rm,higher,109868998.540000,94000000.000000,GREEN,On plan,▲
+2026-06-01,K13,Total deposits,deposits,rm,higher,116968593.900000,101000000.000000,GREEN,On plan,▲
+2026-07-01,K13,Total deposits,deposits,rm,higher,124912658.750000,108000000.000000,GREEN,On plan,▲
+2026-08-01,K13,Total deposits,deposits,rm,higher,132182650.560000,115000000.000000,GREEN,On plan,▲
+2024-09-01,K14,CASA ratio,deposits,pct,higher,0.970697,0.900000,GREEN,On plan,▲
+2024-10-01,K14,CASA ratio,deposits,pct,higher,0.950448,0.900000,GREEN,On plan,▲
+2024-11-01,K14,CASA ratio,deposits,pct,higher,0.931257,0.900000,GREEN,On plan,▲
+2024-12-01,K14,CASA ratio,deposits,pct,higher,0.930308,0.900000,GREEN,On plan,▲
+2025-01-01,K14,CASA ratio,deposits,pct,higher,0.919551,0.800000,GREEN,On plan,▲
+2025-02-01,K14,CASA ratio,deposits,pct,higher,0.911164,0.800000,GREEN,On plan,▲
+2025-03-01,K14,CASA ratio,deposits,pct,higher,0.775258,0.800000,AMBER,Watch,●
+2025-04-01,K14,CASA ratio,deposits,pct,higher,0.675589,0.800000,RED,Off plan,▼
+2025-05-01,K14,CASA ratio,deposits,pct,higher,0.631111,0.800000,RED,Off plan,▼
+2025-06-01,K14,CASA ratio,deposits,pct,higher,0.655776,0.800000,RED,Off plan,▼
+2025-07-01,K14,CASA ratio,deposits,pct,higher,0.683107,0.800000,RED,Off plan,▼
+2025-08-01,K14,CASA ratio,deposits,pct,higher,0.691769,0.800000,RED,Off plan,▼
+2025-09-01,K14,CASA ratio,deposits,pct,higher,0.729641,0.800000,RED,Off plan,▼
+2025-10-01,K14,CASA ratio,deposits,pct,higher,0.778166,0.800000,AMBER,Watch,●
+2025-11-01,K14,CASA ratio,deposits,pct,higher,0.805801,0.800000,GREEN,On plan,▲
+2025-12-01,K14,CASA ratio,deposits,pct,higher,0.794811,0.800000,AMBER,Watch,●
+2026-01-01,K14,CASA ratio,deposits,pct,higher,0.789380,0.800000,AMBER,Watch,●
+2026-02-01,K14,CASA ratio,deposits,pct,higher,0.788659,0.800000,AMBER,Watch,●
+2026-03-01,K14,CASA ratio,deposits,pct,higher,0.788372,0.800000,AMBER,Watch,●
+2026-04-01,K14,CASA ratio,deposits,pct,higher,0.790987,0.800000,AMBER,Watch,●
+2026-05-01,K14,CASA ratio,deposits,pct,higher,0.789027,0.800000,AMBER,Watch,●
+2026-06-01,K14,CASA ratio,deposits,pct,higher,0.786050,0.800000,AMBER,Watch,●
+2026-07-01,K14,CASA ratio,deposits,pct,higher,0.781257,0.800000,AMBER,Watch,●
+2026-08-01,K14,CASA ratio,deposits,pct,higher,0.781857,0.800000,AMBER,Watch,●
+2024-09-01,K15,Cost of funds,deposits,pct,lower,0.020119,0.022000,GREEN,On plan,▲
+2024-10-01,K15,Cost of funds,deposits,pct,lower,0.020186,0.022000,GREEN,On plan,▲
+2024-11-01,K15,Cost of funds,deposits,pct,lower,0.020267,0.022000,GREEN,On plan,▲
+2024-12-01,K15,Cost of funds,deposits,pct,lower,0.020304,0.022000,GREEN,On plan,▲
+2025-01-01,K15,Cost of funds,deposits,pct,lower,0.020336,0.022000,GREEN,On plan,▲
+2025-02-01,K15,Cost of funds,deposits,pct,lower,0.020376,0.022000,GREEN,On plan,▲
+2025-03-01,K15,Cost of funds,deposits,pct,lower,0.021961,0.022000,GREEN,On plan,▲
+2025-04-01,K15,Cost of funds,deposits,pct,lower,0.024375,0.022000,RED,Off plan,▼
+2025-05-01,K15,Cost of funds,deposits,pct,lower,0.025849,0.022000,RED,Off plan,▼
+2025-06-01,K15,Cost of funds,deposits,pct,lower,0.025959,0.022000,RED,Off plan,▼
+2025-07-01,K15,Cost of funds,deposits,pct,lower,0.025312,0.022000,RED,Off plan,▼
+2025-08-01,K15,Cost of funds,deposits,pct,lower,0.023750,0.020000,RED,Off plan,▼
+2025-09-01,K15,Cost of funds,deposits,pct,lower,0.022720,0.020000,RED,Off plan,▼
+2025-10-01,K15,Cost of funds,deposits,pct,lower,0.021165,0.020000,RED,Off plan,▼
+2025-11-01,K15,Cost of funds,deposits,pct,lower,0.019829,0.020000,GREEN,On plan,▲
+2025-12-01,K15,Cost of funds,deposits,pct,lower,0.019305,0.020000,GREEN,On plan,▲
+2026-01-01,K15,Cost of funds,deposits,pct,lower,0.019323,0.020000,GREEN,On plan,▲
+2026-02-01,K15,Cost of funds,deposits,pct,lower,0.019323,0.020000,GREEN,On plan,▲
+2026-03-01,K15,Cost of funds,deposits,pct,lower,0.019326,0.020000,GREEN,On plan,▲
+2026-04-01,K15,Cost of funds,deposits,pct,lower,0.019329,0.020000,GREEN,On plan,▲
+2026-05-01,K15,Cost of funds,deposits,pct,lower,0.019335,0.020000,GREEN,On plan,▲
+2026-06-01,K15,Cost of funds,deposits,pct,lower,0.019341,0.020000,GREEN,On plan,▲
+2026-07-01,K15,Cost of funds,deposits,pct,lower,0.019347,0.020000,GREEN,On plan,▲
+2026-08-01,K15,Cost of funds,deposits,pct,lower,0.019351,0.020000,GREEN,On plan,▲
+2025-03-01,K16,FD retention at maturity,deposits,pct,higher,1.000000,,,,
+2025-04-01,K16,FD retention at maturity,deposits,pct,higher,0.925947,,,,
+2025-05-01,K16,FD retention at maturity,deposits,pct,higher,0.959377,,,,
+2025-06-01,K16,FD retention at maturity,deposits,pct,higher,0.714203,,,,
+2025-07-01,K16,FD retention at maturity,deposits,pct,higher,0.734971,,,,
+2025-08-01,K16,FD retention at maturity,deposits,pct,higher,0.868523,,,,
+2025-09-01,K16,FD retention at maturity,deposits,pct,higher,0.626875,,,,
+2025-10-01,K16,FD retention at maturity,deposits,pct,higher,0.553301,,,,
+2025-11-01,K16,FD retention at maturity,deposits,pct,higher,0.606325,,,,
+2025-12-01,K16,FD retention at maturity,deposits,pct,higher,0.804978,,,,
+2026-01-01,K16,FD retention at maturity,deposits,pct,higher,0.851359,,,,
+2026-02-01,K16,FD retention at maturity,deposits,pct,higher,0.903320,,,,
+2026-03-01,K16,FD retention at maturity,deposits,pct,higher,0.868038,,,,
+2026-04-01,K16,FD retention at maturity,deposits,pct,higher,0.812026,,,,
+2026-05-01,K16,FD retention at maturity,deposits,pct,higher,0.871582,,,,
+2026-06-01,K16,FD retention at maturity,deposits,pct,higher,0.810557,,,,
+2026-07-01,K16,FD retention at maturity,deposits,pct,higher,0.825919,,,,
+2026-08-01,K16,FD retention at maturity,deposits,pct,higher,0.838092,,,,
+2025-01-01,K17,Gross loans,credit,rm,higher,1988000.000000,,,,
+2025-02-01,K17,Gross loans,credit,rm,higher,4594927.240000,,,,
+2025-03-01,K17,Gross loans,credit,rm,higher,6250649.530000,,,,
+2025-04-01,K17,Gross loans,credit,rm,higher,8392467.950000,,,,
+2025-05-01,K17,Gross loans,credit,rm,higher,9821251.160000,,,,
+2025-06-01,K17,Gross loans,credit,rm,higher,12045083.400000,,,,
+2025-07-01,K17,Gross loans,credit,rm,higher,16090821.290000,,,,
+2025-08-01,K17,Gross loans,credit,rm,higher,19902043.760000,,,,
+2025-09-01,K17,Gross loans,credit,rm,higher,23532976.040000,,,,
+2025-10-01,K17,Gross loans,credit,rm,higher,27793884.390000,,,,
+2025-11-01,K17,Gross loans,credit,rm,higher,31976978.380000,,,,
+2025-12-01,K17,Gross loans,credit,rm,higher,35948863.950000,,,,
+2026-01-01,K17,Gross loans,credit,rm,higher,37756560.800000,,,,
+2026-02-01,K17,Gross loans,credit,rm,higher,40199066.520000,,,,
+2026-03-01,K17,Gross loans,credit,rm,higher,41480006.020000,,,,
+2026-04-01,K17,Gross loans,credit,rm,higher,43528118.770000,,,,
+2026-05-01,K17,Gross loans,credit,rm,higher,45289071.000000,,,,
+2026-06-01,K17,Gross loans,credit,rm,higher,46786583.000000,,,,
+2026-07-01,K17,Gross loans,credit,rm,higher,47769207.090000,,,,
+2026-08-01,K17,Gross loans,credit,rm,higher,49074347.690000,,,,
+2025-01-01,K18,Financing disbursed,credit,rm,higher,1995000.000000,,,,
+2025-02-01,K18,Financing disbursed,credit,rm,higher,2747000.000000,,,,
+2025-03-01,K18,Financing disbursed,credit,rm,higher,1852000.000000,,,,
+2025-04-01,K18,Financing disbursed,credit,rm,higher,2367000.000000,,,,
+2025-05-01,K18,Financing disbursed,credit,rm,higher,1739000.000000,,,,
+2025-06-01,K18,Financing disbursed,credit,rm,higher,2527000.000000,,,,
+2025-07-01,K18,Financing disbursed,credit,rm,higher,4484500.000000,,,,
+2025-08-01,K18,Financing disbursed,credit,rm,higher,4347000.000000,,,,
+2025-09-01,K18,Financing disbursed,credit,rm,higher,4303500.000000,,,,
+2025-10-01,K18,Financing disbursed,credit,rm,higher,5075000.000000,,,,
+2025-11-01,K18,Financing disbursed,credit,rm,higher,5012000.000000,,,,
+2025-12-01,K18,Financing disbursed,credit,rm,higher,5052500.000000,,,,
+2026-01-01,K18,Financing disbursed,credit,rm,higher,3101500.000000,,,,
+2026-02-01,K18,Financing disbursed,credit,rm,higher,3658000.000000,,,,
+2026-03-01,K18,Financing disbursed,credit,rm,higher,2807500.000000,,,,
+2026-04-01,K18,Financing disbursed,credit,rm,higher,3585500.000000,,,,
+2026-05-01,K18,Financing disbursed,credit,rm,higher,3337000.000000,,,,
+2026-06-01,K18,Financing disbursed,credit,rm,higher,3208000.000000,,,,
+2026-07-01,K18,Financing disbursed,credit,rm,higher,2799000.000000,,,,
+2026-08-01,K18,Financing disbursed,credit,rm,higher,3154000.000000,,,,
+2025-01-01,K19,PAR30,credit,pct,lower,0.000000,0.025000,GREEN,On plan,▲
+2025-02-01,K19,PAR30,credit,pct,lower,0.000000,0.025000,GREEN,On plan,▲
+2025-03-01,K19,PAR30,credit,pct,lower,0.003600,0.025000,GREEN,On plan,▲
+2025-04-01,K19,PAR30,credit,pct,lower,0.002681,0.025000,GREEN,On plan,▲
+2025-05-01,K19,PAR30,credit,pct,lower,0.005727,0.025000,GREEN,On plan,▲
+2025-06-01,K19,PAR30,credit,pct,lower,0.005269,0.025000,GREEN,On plan,▲
+2025-07-01,K19,PAR30,credit,pct,lower,0.005488,0.025000,GREEN,On plan,▲
+2025-08-01,K19,PAR30,credit,pct,lower,0.006521,0.025000,GREEN,On plan,▲
+2025-09-01,K19,PAR30,credit,pct,lower,0.010641,0.025000,GREEN,On plan,▲
+2025-10-01,K19,PAR30,credit,pct,lower,0.011501,0.025000,GREEN,On plan,▲
+2025-11-01,K19,PAR30,credit,pct,lower,0.015012,0.025000,GREEN,On plan,▲
+2025-12-01,K19,PAR30,credit,pct,lower,0.020627,0.025000,GREEN,On plan,▲
+2026-01-01,K19,PAR30,credit,pct,lower,0.031080,0.030000,AMBER,Watch,●
+2026-02-01,K19,PAR30,credit,pct,lower,0.029772,0.030000,GREEN,On plan,▲
+2026-03-01,K19,PAR30,credit,pct,lower,0.034770,0.030000,RED,Off plan,▼
+2026-04-01,K19,PAR30,credit,pct,lower,0.034611,0.030000,RED,Off plan,▼
+2026-05-01,K19,PAR30,credit,pct,lower,0.034714,0.030000,RED,Off plan,▼
+2026-06-01,K19,PAR30,credit,pct,lower,0.036654,0.030000,RED,Off plan,▼
+2026-07-01,K19,PAR30,credit,pct,lower,0.032956,0.030000,AMBER,Watch,●
+2026-08-01,K19,PAR30,credit,pct,lower,0.029851,0.030000,GREEN,On plan,▲
+2025-01-01,K20,Gross impaired loans (GIL) ratio,credit,pct,lower,0.000000,,,,
+2025-02-01,K20,Gross impaired loans (GIL) ratio,credit,pct,lower,0.000000,,,,
+2025-03-01,K20,Gross impaired loans (GIL) ratio,credit,pct,lower,0.000000,,,,
+2025-04-01,K20,Gross impaired loans (GIL) ratio,credit,pct,lower,0.000000,,,,
+2025-05-01,K20,Gross impaired loans (GIL) ratio,credit,pct,lower,0.002291,,,,
+2025-06-01,K20,Gross impaired loans (GIL) ratio,credit,pct,lower,0.001868,,,,
+2025-07-01,K20,Gross impaired loans (GIL) ratio,credit,pct,lower,0.000827,,,,
+2025-08-01,K20,Gross impaired loans (GIL) ratio,credit,pct,lower,0.000669,,,,
+2025-09-01,K20,Gross impaired loans (GIL) ratio,credit,pct,lower,0.001246,,,,
+2025-10-01,K20,Gross impaired loans (GIL) ratio,credit,pct,lower,0.002739,,,,
+2025-11-01,K20,Gross impaired loans (GIL) ratio,credit,pct,lower,0.002361,,,,
+2025-12-01,K20,Gross impaired loans (GIL) ratio,credit,pct,lower,0.002968,,,,
+2026-01-01,K20,Gross impaired loans (GIL) ratio,credit,pct,lower,0.005927,,,,
+2026-02-01,K20,Gross impaired loans (GIL) ratio,credit,pct,lower,0.007064,,,,
+2026-03-01,K20,Gross impaired loans (GIL) ratio,credit,pct,lower,0.008594,,,,
+2026-04-01,K20,Gross impaired loans (GIL) ratio,credit,pct,lower,0.011116,,,,
+2026-05-01,K20,Gross impaired loans (GIL) ratio,credit,pct,lower,0.011943,,,,
+2026-06-01,K20,Gross impaired loans (GIL) ratio,credit,pct,lower,0.012654,,,,
+2026-07-01,K20,Gross impaired loans (GIL) ratio,credit,pct,lower,0.011747,,,,
+2026-08-01,K20,Gross impaired loans (GIL) ratio,credit,pct,lower,0.012601,,,,
+2025-07-01,K21,Early delinquency at month 6,credit,pct,lower,0.031008,,,,
+2025-08-01,K21,Early delinquency at month 6,credit,pct,lower,0.031915,,,,
+2025-09-01,K21,Early delinquency at month 6,credit,pct,lower,0.022222,,,,
+2025-10-01,K21,Early delinquency at month 6,credit,pct,lower,0.038217,,,,
+2025-11-01,K21,Early delinquency at month 6,credit,pct,lower,0.025000,,,,
+2025-12-01,K21,Early delinquency at month 6,credit,pct,lower,0.046512,,,,
+2026-01-01,K21,Early delinquency at month 6,credit,pct,lower,0.123684,,,,
+2026-02-01,K21,Early delinquency at month 6,credit,pct,lower,0.101408,,,,
+2026-03-01,K21,Early delinquency at month 6,credit,pct,lower,0.133858,,,,
+2026-04-01,K21,Early delinquency at month 6,credit,pct,lower,0.114713,,,,
+2026-05-01,K21,Early delinquency at month 6,credit,pct,lower,0.098592,,,,
+2026-06-01,K21,Early delinquency at month 6,credit,pct,lower,0.118072,,,,
+2026-07-01,K21,Early delinquency at month 6,credit,pct,lower,0.017699,,,,
+2026-08-01,K21,Early delinquency at month 6,credit,pct,lower,0.038023,,,,
+2024-09-01,K22,Net interest income,finance,rm,higher,-2011.740000,,,,
+2024-10-01,K22,Net interest income,finance,rm,higher,-6626.930000,,,,
+2024-11-01,K22,Net interest income,finance,rm,higher,-11164.290000,,,,
+2024-12-01,K22,Net interest income,finance,rm,higher,-16997.490000,,,,
+2025-01-01,K22,Net interest income,finance,rm,higher,-8703.630000,,,,
+2025-02-01,K22,Net interest income,finance,rm,higher,6557.640000,,,,
+2025-03-01,K22,Net interest income,finance,rm,higher,5171.360000,,,,
+2025-04-01,K22,Net interest income,finance,rm,higher,6419.160000,,,,
+2025-05-01,K22,Net interest income,finance,rm,higher,-2719.950000,,,,
+2025-06-01,K22,Net interest income,finance,rm,higher,3672.470000,,,,
+2025-07-01,K22,Net interest income,finance,rm,higher,27817.010000,,,,
+2025-08-01,K22,Net interest income,finance,rm,higher,56807.110000,,,,
+2025-09-01,K22,Net interest income,finance,rm,higher,88174.690000,,,,
+2025-10-01,K22,Net interest income,finance,rm,higher,120680.230000,,,,
+2025-11-01,K22,Net interest income,finance,rm,higher,159961.710000,,,,
+2025-12-01,K22,Net interest income,finance,rm,higher,184408.460000,,,,
+2026-01-01,K22,Net interest income,finance,rm,higher,186354.930000,,,,
+2026-02-01,K22,Net interest income,finance,rm,higher,206253.370000,,,,
+2026-03-01,K22,Net interest income,finance,rm,higher,190286.140000,,,,
+2026-04-01,K22,Net interest income,finance,rm,higher,199625.320000,,,,
+2026-05-01,K22,Net interest income,finance,rm,higher,193980.320000,,,,
+2026-06-01,K22,Net interest income,finance,rm,higher,198004.880000,,,,
+2026-07-01,K22,Net interest income,finance,rm,higher,186662.230000,,,,
+2026-08-01,K22,Net interest income,finance,rm,higher,182302.050000,,,,

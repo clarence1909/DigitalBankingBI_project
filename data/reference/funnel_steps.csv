@@ -1,0 +1,7 @@
+event_name,step_no,step_name
+signup_started,1,Sign-up started
+phone_verified,2,Phone verified
+id_scanned,3,MyKad scanned
+liveness_passed,4,Selfie liveness passed
+ekyc_approved,5,eKYC approved
+account_opened,6,Account opened

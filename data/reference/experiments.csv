@@ -1,0 +1,2 @@
+experiment_id,experiment_name,start_date,end_date,control_variant,treatment_variant,primary_metric,guardrail_metric,guardrail_max_increase_pp,decision_rule
+ekyc_guided_flow,Guided selfie capture in eKYC,2026-02-01,2026-04-30,control,guided,Share of assigned applicants who open an account,Share of opened accounts flagged by fraud monitoring within 30 days,0.5,"Ship guided if P(guided better) >= 95% and expected uplift >= 1 percentage point and P(guardrail worse by more than 0.5 pp) < 10%, and only if there is no sample-ratio mismatch (chi-square p >= 0.001)"

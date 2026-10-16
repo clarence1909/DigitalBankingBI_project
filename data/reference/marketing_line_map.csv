@@ -1,0 +1,11 @@
+raw_label,row_type,channel,is_acquisition
+google ads,spend,google_search,true
+facebook / instagram,spend,meta_ads,true
+tiktok,spend,tiktok,true
+affiliate (cashback),spend,affiliate,true
+referral programme,spend,referral,true
+organic / app store,spend,organic,true
+fd raya promo (in-app banners),spend,deposit_promo,false
+brand / pr,spend,brand,false
+total,total,,false
+n/a = invoice not received yet,note,,false

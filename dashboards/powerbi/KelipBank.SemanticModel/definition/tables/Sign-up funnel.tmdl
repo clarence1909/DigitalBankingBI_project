@@ -1,0 +1,40 @@
+/// The eKYC test: share of applicants in each flow who reached each sign-up step.
+table 'Sign-up funnel'
+
+	/// Share of the flow's applicants who reached the step.
+	measure 'Share of applicants' = SUM('Sign-up funnel'[Share reached])
+		formatString: 0.0%
+
+	column Step
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Step
+		sortByColumn: 'Step order'
+
+	column Flow
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Flow
+
+	column 'Share reached'
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: Share reached
+
+	column 'Step order'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Step order
+
+	partition 'Sign-up funnel' = m
+		mode: import
+		source =
+				let
+				    Source = #"Dashboard data",
+				    #"Kept Sign-up funnel rows" = Table.SelectRows(Source, each [chart] = "funnel_ab"),
+				    #"Kept columns" = Table.SelectColumns(#"Kept Sign-up funnel rows", {"category", "series", "rate", "sort"}),
+				    #"Renamed columns" = Table.RenameColumns(#"Kept columns", {{"category", "Step"}, {"series", "Flow"}, {"rate", "Share reached"}, {"sort", "Step order"}})
+				in
+				    #"Renamed columns"

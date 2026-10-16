@@ -1,0 +1,5 @@
+response_code,response_description,is_approved
+00,Approved,true
+51,Declined: insufficient funds,false
+55,Declined: incorrect PIN,false
+59,Declined: suspected fraud,false

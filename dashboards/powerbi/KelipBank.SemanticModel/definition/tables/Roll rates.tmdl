@@ -1,0 +1,49 @@
+/// Share of loans in each arrears bucket that moved to each bucket a month later, over the last six months.
+table 'Roll rates'
+
+	/// Share of the From bucket's loans that were in the To bucket a month later.
+	measure 'Share of loans' = SUM('Roll rates'[Share moved])
+		formatString: 0%
+
+	column From
+		dataType: string
+		summarizeBy: none
+		sourceColumn: From
+		sortByColumn: 'From order'
+
+	column To
+		dataType: string
+		summarizeBy: none
+		sourceColumn: To
+		sortByColumn: 'To order'
+
+	column 'Share moved'
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: Share moved
+
+	column 'From order'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: From order
+
+	column 'To order'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: To order
+
+	partition 'Roll rates' = m
+		mode: import
+		source =
+				let
+				    Source = #"Dashboard data",
+				    #"Kept Roll rates rows" = Table.SelectRows(Source, each [chart] = "roll_rates"),
+				    #"Kept columns" = Table.SelectColumns(#"Kept Roll rates rows", {"category", "series", "rate"}),
+				    #"Renamed columns" = Table.RenameColumns(#"Kept columns", {{"category", "From"}, {"series", "To"}, {"rate", "Share moved"}}),
+				    #"Added From order" = Table.AddColumn(#"Renamed columns", "From order", each List.PositionOf({"Current", "1-29 days", "30-59 days", "60-90 days", "90+ days", "Settled", "Written off"}, [From]) + 1, Int64.Type),
+				    #"Added To order" = Table.AddColumn(#"Added From order", "To order", each List.PositionOf({"Current", "1-29 days", "30-59 days", "60-90 days", "90+ days", "Settled", "Written off"}, [To]) + 1, Int64.Type)
+				in
+				    #"Added To order"

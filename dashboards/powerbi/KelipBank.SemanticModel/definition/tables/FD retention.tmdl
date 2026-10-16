@@ -1,0 +1,28 @@
+/// Share of matured fixed deposit money still at Kelip Bank 30 days after maturity.
+table 'FD retention'
+
+	/// Share of matured money rolled over or kept at Kelip Bank 30 days after maturity.
+	measure 'Money kept at maturity' = SUM('FD retention'[Share kept])
+		formatString: 0%
+
+	column 'FD type'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: FD type
+
+	column 'Share kept'
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: Share kept
+
+	partition 'FD retention' = m
+		mode: import
+		source =
+				let
+				    Source = #"Dashboard data",
+				    #"Kept FD retention rows" = Table.SelectRows(Source, each [chart] = "fd_retention"),
+				    #"Kept columns" = Table.SelectColumns(#"Kept FD retention rows", {"category", "rate"}),
+				    #"Renamed columns" = Table.RenameColumns(#"Kept columns", {{"category", "FD type"}, {"rate", "Share kept"}})
+				in
+				    #"Renamed columns"

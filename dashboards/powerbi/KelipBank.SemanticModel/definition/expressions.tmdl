@@ -1,0 +1,12 @@
+/// The folder that holds dashboard_data.csv: the repo's dashboards\extracts folder. Change it in Home > Transform data > Edit parameters.
+expression DataFolder = "C:\Users\clare\DigitalBankingBI_project\dashboards\extracts" meta [IsParameterQuery = true, Type = "Text", IsParameterQueryRequired = true]
+
+/// Every chart's rows, read once from dashboard_data.csv. Each table keeps its own chart's rows.
+expression 'Dashboard data' =
+		let
+		    Source = Csv.Document(File.Contents(Text.TrimEnd(DataFolder, {"\", "/"}) & "\dashboard_data.csv"), [Delimiter = ",", Columns = 15, Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+		    #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+		    #"Blanks as nulls" = Table.ReplaceValue(#"Promoted headers", "", null, Replacer.ReplaceValue, {"month", "category", "series", "x", "count", "rate", "rm_millions", "rm", "number", "label", "detail", "status", "status_text", "sort"}),
+		    #"Changed types" = Table.TransformColumnTypes(#"Blanks as nulls", {{"chart", type text}, {"month", type date}, {"category", type text}, {"series", type text}, {"x", Int64.Type}, {"count", type number}, {"rate", type number}, {"rm_millions", type number}, {"rm", type number}, {"number", type number}, {"label", type text}, {"detail", type text}, {"status", type text}, {"status_text", type text}, {"sort", Int64.Type}}, "en-US")
+		in
+		    #"Changed types"

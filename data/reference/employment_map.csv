@@ -1,0 +1,9 @@
+raw_label,employment_type
+not working,not_working
+unemployed,not_working
+retired,retired
+salaried,salaried
+self employed,self_employed
+self-employed,self_employed
+self_employed,self_employed
+student,student

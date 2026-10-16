@@ -1,0 +1,23 @@
+txn_code_raw,txn_type,txn_type_name,is_customer_initiated,code_era
+SALARY_CREDIT,salary,Salary credit,false,before 2025-06-01 engine upgrade
+SAL,salary,Salary credit,false,from 2025-06-01
+DUITNOW_IN,duitnow_in,DuitNow transfer in,false,before 2025-06-01 engine upgrade
+DNI,duitnow_in,DuitNow transfer in,false,from 2025-06-01
+DUITNOW_OUT,duitnow_out,DuitNow transfer out,true,before 2025-06-01 engine upgrade
+DNO,duitnow_out,DuitNow transfer out,true,from 2025-06-01
+BILL_PAYMENT,bill_payment,Bill payment (JomPAY),true,before 2025-06-01 engine upgrade
+BIL,bill_payment,Bill payment (JomPAY),true,from 2025-06-01
+CARD_PURCHASE,card_purchase,Debit card purchase,true,before 2025-06-01 engine upgrade
+CRD,card_purchase,Debit card purchase,true,from 2025-06-01
+INTEREST_CREDIT,interest,Interest credit,false,before 2025-06-01 engine upgrade
+INT,interest,Interest credit,false,from 2025-06-01
+FD_PLACEMENT,fd_placement,Fixed deposit placement,true,before 2025-06-01 engine upgrade
+FDP,fd_placement,Fixed deposit placement,true,from 2025-06-01
+FD_MATURITY,fd_maturity,Fixed deposit maturity,false,before 2025-06-01 engine upgrade
+FDM,fd_maturity,Fixed deposit maturity,false,from 2025-06-01
+FD_ROLLOVER,fd_rollover,Fixed deposit rollover,false,before 2025-06-01 engine upgrade
+FDR,fd_rollover,Fixed deposit rollover,false,from 2025-06-01
+PF_DISBURSEMENT,pf_disbursement,Financing disbursement,false,before 2025-06-01 engine upgrade
+PFD,pf_disbursement,Financing disbursement,false,from 2025-06-01
+PF_REPAYMENT,pf_repayment,Financing repayment,false,before 2025-06-01 engine upgrade
+PFR,pf_repayment,Financing repayment,false,from 2025-06-01

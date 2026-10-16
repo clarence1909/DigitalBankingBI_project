@@ -1,0 +1,33 @@
+/// Share of loans ever 30+ days past due, by months on book and the credit policy they were approved under.
+table Vintage
+
+	/// Share of the policy's loans ever 30+ days past due by this month on book.
+	measure 'Share 30+ days past due' = SUM(Vintage[Share past due])
+		formatString: 0.0%
+
+	column Policy
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Policy
+
+	column 'Months on book'
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Months on book
+
+	column 'Share past due'
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: Share past due
+
+	partition Vintage = m
+		mode: import
+		source =
+				let
+				    Source = #"Dashboard data",
+				    #"Kept Vintage rows" = Table.SelectRows(Source, each [chart] = "vintage"),
+				    #"Kept columns" = Table.SelectColumns(#"Kept Vintage rows", {"series", "x", "rate"}),
+				    #"Renamed columns" = Table.RenameColumns(#"Kept columns", {{"series", "Policy"}, {"x", "Months on book"}, {"rate", "Share past due"}})
+				in
+				    #"Renamed columns"

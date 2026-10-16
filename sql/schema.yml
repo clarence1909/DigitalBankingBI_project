@@ -1,0 +1,450 @@
+# Kelip Bank warehouse: every table and column in the reporting layers.
+#
+# The data dictionary (docs/04_data_dictionary.md) and the ER diagram
+# (docs/er_diagram.md) are generated from this file, and a blocking check
+# fails the build if it drifts from the tables actually in the warehouse.
+# All data is synthetic.
+
+version: 1
+schemas:
+  marts:
+    description: The star schema. Dimensions describe who and what; facts record what happened.
+    tables:
+      dim_date:
+        description: Calendar for the reporting window, 1 Sep 2024 to 31 Aug 2026.
+        grain: One row per day
+        primary_key: [date_day]
+        columns:
+          date_day: The date
+          year: Calendar year
+          month: Month number, 1 to 12
+          quarter: Calendar quarter, 1 to 4
+          year_month: Year and month as text, e.g. 2025-03
+          month_start: First day of the month
+          month_end: Last day of the month
+          fiscal_year: Financial year (Kelip Bank's financial year is the calendar year), e.g. FY2025
+          day_of_week: Day of week, 0 = Sunday to 6 = Saturday
+          day_name: Short day name, e.g. Mon
+          is_month_end: True on the last day of the month
+          is_weekend: True on Saturday and Sunday
+      dim_channel:
+        description: Acquisition channels.
+        grain: One row per channel
+        primary_key: [channel]
+        columns:
+          channel: Channel key, e.g. tiktok
+          channel_name: Channel name for reports
+          channel_group: organic, paid_media or bonus_scheme
+          is_paid: True if the channel costs money
+          cost_model: How the channel is paid for
+          sort_order: Display order
+      dim_product:
+        description: Products. CASA is the savings account; FD are fixed deposits; CARD is the debit card; PF is personal financing.
+        grain: One row per product
+        primary_key: [product_code]
+        columns:
+          product_code: Product key, e.g. FD-12M
+          product_name: Product name for reports
+          product_family: CASA, FD, CARD or PF
+          tenor_months: Term in months for fixed deposits; empty otherwise
+          is_deposit: True for savings and fixed deposits
+      dim_customer:
+        description: Customers, with how they were acquired and whether they activated their debit card.
+        grain: One row per customer
+        primary_key: [customer_id]
+        relationships:
+          - {column: acquisition_channel, references: dim_channel.channel}
+          - {column: applicant_id, references: fct_onboarding_funnel.applicant_id}
+        columns:
+          customer_id: Customer identifier from core banking
+          applicant_id: The app sign-up that became this customer
+          open_date: Date the account opened (Malaysia time)
+          cohort_month: Month the account opened
+          acquisition_channel: Channel the applicant came from
+          ekyc_flow: eKYC flow the applicant saw, control or guided
+          device_os: android or ios, from the first app event
+          state: Malaysian state or federal territory, standardised
+          employment_type: salaried, self_employed, student, retired or not_working
+          income_band: Declared monthly income band in RM
+          risk_rating: Anti-money-laundering risk rating, low, medium or high
+          age_at_open: Age in years when the account opened
+          age_band: Age group at opening
+          savings_account_id: The customer's savings (CASA) account
+          card_id: The customer's debit card, if issued
+          has_debit_card: True if a debit card was issued
+          card_activation_date: Date the debit card was activated
+          card_activated_30d: True if the card was activated within 30 days of opening
+          fraud_flag_date: Date fraud monitoring flagged the account, if it did
+          fraud_flagged_30d: True if flagged within 30 days of opening (the eKYC test's guardrail)
+          customer_status: ACTIVE or CLOSED
+          closed_date: Date the savings account closed, if it did
+      dim_account:
+        description: Accounts held at Kelip Bank. Savings, fixed deposits and debit cards.
+        grain: One row per account
+        primary_key: [account_id]
+        relationships:
+          - {column: customer_id, references: dim_customer.customer_id}
+          - {column: product_code, references: dim_product.product_code}
+        columns:
+          account_id: Account identifier (SA savings, FD fixed deposit, DC debit card)
+          customer_id: Account holder
+          product_code: Product
+          product_name: Product name
+          product_family: CASA, FD or CARD
+          open_date: Date opened (for a card, the date issued)
+          close_date: Date closed or matured
+          account_status: ACTIVE, CLOSED, MATURED or NOT_ACTIVATED (cards)
+          fd_rate_pct: Fixed deposit interest rate, % a year
+          fd_principal: Amount placed in the fixed deposit (RM)
+          tenor_months: Fixed deposit term in months
+          maturity_date: Fixed deposit maturity date
+          campaign_code: Promotion the deposit was placed under, e.g. RAYA25
+          is_promo_fd: True for Raya promotion fixed deposits
+          rollover_of_account_id: The fixed deposit this one rolled over from
+          linked_account_id: The savings account a card or fixed deposit is linked to
+          card_activation_date: Date a debit card was activated
+      fct_onboarding_funnel:
+        description: Accumulating snapshot of the sign-up journey, with the time each step was reached.
+        grain: One row per applicant
+        primary_key: [applicant_id]
+        relationships:
+          - {column: acquisition_channel, references: dim_channel.channel}
+        columns:
+          applicant_id: Applicant identifier from the app
+          customer_id: Customer created if the account opened
+          acquisition_channel: Channel the applicant came from
+          device_os: android or ios
+          ekyc_flow: eKYC flow shown, control or guided
+          is_in_ekyc_test: True if the applicant started during the eKYC A/B test (1 Feb to 30 Apr 2026)
+          start_month: Month sign-up started
+          signup_started_ts: Step 1, sign-up started (Malaysia time)
+          phone_verified_ts: Step 2, phone number verified
+          id_scanned_ts: Step 3, MyKad scanned
+          liveness_passed_ts: Step 4, selfie liveness check passed
+          ekyc_approved_ts: Step 5, eKYC approved (identity and name screening)
+          account_opened_ts: Step 6, account opened
+          liveness_failures: Failed selfie attempts
+          is_ekyc_rejected: True if eKYC rejected the applicant
+          furthest_step_no: Furthest step reached, 1 to 6
+          is_opened: True if the account opened
+          went_to_manual_review: True if eKYC approval took over an hour (manual review)
+          hours_to_open: Hours from sign-up start to account opening
+      fct_ledger_postings:
+        description: Every posting to savings and fixed deposit accounts. Credits are positive, debits negative.
+        grain: One row per posting
+        primary_key: [posting_id]
+        relationships:
+          - {column: account_id, references: dim_account.account_id}
+          - {column: customer_id, references: dim_customer.customer_id}
+          - {column: product_code, references: dim_product.product_code}
+          - {column: posting_date, references: dim_date.date_day}
+          - {column: auth_id, references: fct_card_authorisations.auth_id}
+        columns:
+          posting_id: Posting identifier from the posting engine
+          account_id: Account posted to
+          customer_id: Account holder
+          product_code: Product of the account
+          product_family: CASA or FD
+          posting_ts_myt: Posting time, Malaysia time
+          posting_date: Posting date, Malaysia time (this decides the month)
+          posting_month: First day of the posting month
+          amount: Signed amount in RM, credit positive
+          direction: CR or DR
+          txn_type: Standard transaction type, e.g. duitnow_out, card_purchase, fd_placement
+          is_customer_initiated: True for transactions the customer made (transfers out, bills, card purchases, FD placements)
+          channel: Payment rail, e.g. DUITNOW, CARD, JOMPAY
+          reference: Linked record (card authorisation, fixed deposit or loan)
+          auth_id: Card authorisation settled by this posting
+          loan_id: Loan disbursed or repaid by this posting
+      fct_card_authorisations:
+        description: Debit card authorisations from the card processor, with settlement timing.
+        grain: One row per authorisation
+        primary_key: [auth_id]
+        relationships:
+          - {column: card_id, references: dim_account.account_id}
+          - {column: customer_id, references: dim_customer.customer_id}
+          - {column: auth_date, references: dim_date.date_day}
+        columns:
+          auth_id: Authorisation identifier from the processor
+          card_id: Card used
+          customer_id: Cardholder
+          auth_ts_myt: Authorisation time, Malaysia time
+          auth_date: Authorisation date
+          auth_month: First day of the authorisation month
+          amount: Amount in RM
+          mcc: Merchant category code
+          merchant_category: Merchant category, from the MCC
+          category_group: Broader merchant group
+          entry_mode: CONTACTLESS, CHIP or ECOM
+          response_code: Processor response, 00 approved, 51 insufficient funds, 55 wrong PIN, 59 suspected fraud
+          response_description: Response code in words
+          status: Final status, APPROVED, DECLINED or REVERSED
+          was_approved: True if the authorisation was approved at the time (response 00)
+          is_approved_final: True if approved and not later reversed
+          settlement_date: Processor settlement date; empty if not settled
+          settlement_month: First day of the settlement month
+          settlement_lag_days: Days from authorisation to settlement
+          is_late_settlement: True if settlement took more than three days
+      fct_account_balances_monthly:
+        description: Periodic snapshot of deposit balances at each month end, with the interest accrued in the month.
+        grain: One row per savings or fixed deposit account per month
+        primary_key: [account_id, month_end_date]
+        relationships:
+          - {column: account_id, references: dim_account.account_id}
+          - {column: customer_id, references: dim_customer.customer_id}
+          - {column: month_end_date, references: dim_date.date_day}
+        columns:
+          account_id: Account
+          customer_id: Account holder
+          product_code: Product
+          product_family: CASA or FD
+          is_promo_fd: True for Raya promotion fixed deposits
+          month_start: First day of the month
+          month_end_date: Last day of the month
+          balance: Month-end balance reported by core banking (RM)
+          prior_balance: Previous month-end balance (zero in the opening month)
+          average_balance: Average of the opening and closing balance
+          interest_rate_pct: Rate that applied, % a year
+          interest_accrued: Interest cost accrued on the average balance for the month (RM)
+      fct_loan_status_monthly:
+        description: Periodic snapshot of personal financing at each month end, with delinquency.
+        grain: One row per loan per month on the books
+        primary_key: [loan_id, month_end_date]
+        relationships:
+          - {column: customer_id, references: dim_customer.customer_id}
+          - {column: month_end_date, references: dim_date.date_day}
+        columns:
+          loan_id: Loan identifier
+          customer_id: Borrower
+          month_end_date: Snapshot date (month end)
+          month_start: First day of the month
+          vintage_month: Month the loan was disbursed
+          credit_policy: Credit policy that approved it, v1, v2 or v3
+          policy_name: Credit policy name
+          risk_grade: Risk grade at approval, A (best) to D
+          principal: Amount disbursed (RM)
+          interest_rate_pct: Effective interest rate, % a year
+          tenor_months: Term in months
+          months_on_book: Months since disbursement (0 in the disbursement month)
+          outstanding_principal: Principal outstanding at month end (RM)
+          instalments_due: Instalments due so far
+          instalments_paid: Instalments paid so far
+          instalments_in_arrears: Instalments due but not paid
+          days_past_due: Days since the oldest unpaid instalment fell due
+          dpd_bucket: Current, 1-29, 30-59, 60-90, 90+, Settled or Written off
+          loan_status: ACTIVE, SETTLED or WRITTEN_OFF
+          is_on_book: True while the loan is active
+          is_30plus: True if 30 or more days past due
+          is_impaired: True if more than 90 days past due
+          ever_30plus: True if the loan has been 30+ days past due at any month end so far
+          written_off_amount: Principal written off this month (RM)
+          interest_income_accrued: Interest earned this month on a performing loan (RM)
+      fct_marketing_spend:
+        description: Marketing spend from the hand-kept sheet, reshaped to one row per line per month.
+        grain: One row per sheet line per month
+        primary_key: [month_start, line_label]
+        relationships:
+          - {column: channel, references: dim_channel.channel}
+        columns:
+          month_start: First day of the month
+          channel: Channel paid for; brand and deposit_promo lines are not acquisition
+          line_label: Line label as typed in the sheet
+          is_acquisition: True if the spend acquires customers
+          spend: Spend in RM; empty while an invoice is missing
+          is_missing: True if the sheet says n/a (invoice not received)
+      fct_customer_monthly:
+        description: Periodic snapshot of each customer's behaviour in each month since they opened.
+        grain: One row per customer per month while their account is open
+        primary_key: [customer_id, month_start]
+        relationships:
+          - {column: customer_id, references: dim_customer.customer_id}
+        columns:
+          customer_id: Customer
+          cohort_month: Month the account opened
+          month_start: First day of the month
+          months_since_open: Months since the opening month (0 in the opening month)
+          customer_txns: Transactions the customer made themselves
+          is_active: True if the customer made at least one transaction themselves
+          card_txns: Card purchases posted
+          card_spend: Card purchases posted (RM)
+          transfers_and_bills_out: DuitNow transfers out and bill payments (RM)
+          salary_in: Salary credited (RM)
+          transfers_in: DuitNow transfers in (RM)
+          casa_balance: Savings balance at month end (RM)
+          fd_balance: Fixed deposit balance at month end (RM)
+  kpi:
+    description: KPI tables built from the marts, one SQL file per KPI family, plus the scorecard.
+    tables:
+      growth_monthly:
+        description: Growth and onboarding KPIs by month.
+        grain: One row per month
+        primary_key: [month_start]
+        columns:
+          month_start: Month
+          applications_started: K01 applicants who started sign-up
+          new_customers: K02 accounts opened
+          onboarding_conversion: K03 share of the month's applicants who opened an account
+          ekyc_completion_rate: K04 share of applicants who scanned their MyKad and passed liveness
+          acquisition_spend: Marketing spend on acquisition (RM); empty while an invoice is missing
+          cac: K05 acquisition spend per new customer (RM)
+          spend_incomplete: True if an acquisition invoice is missing this month
+          m3_active_rate: K06 share of customers opened three months earlier who were active this month
+      channel_monthly:
+        description: Acquisition economics by channel and cohort month.
+        grain: One row per channel per cohort month
+        primary_key: [month_start, channel]
+        columns:
+          month_start: Cohort month (month the accounts opened)
+          channel: Channel key
+          channel_name: Channel name
+          is_paid: True if the channel costs money
+          applications_started: Applicants who started sign-up in the month
+          new_customers: Accounts opened in the month
+          spend: Channel spend in the month (RM)
+          cost_per_new_customer: Spend per account opened (RM)
+          m3_active_customers: Of the month's new customers, those active in their third month
+          m3_active_rate: Share of new customers active in their third month
+          cost_per_m3_active_customer: Spend per customer still active in month three (RM)
+      engagement_monthly:
+        description: Engagement KPIs by month.
+        grain: One row per month
+        primary_key: [month_start]
+        columns:
+          month_start: Month
+          open_customers: Customers with an open account at month end
+          monthly_active_customers: K07 customers who made at least one transaction themselves
+          active_customer_rate: K08 active customers / open customers
+          txns_per_active_customer: K09 customer-initiated transactions per active customer
+      cards_monthly:
+        description: Debit card KPIs by month.
+        grain: One row per month
+        primary_key: [month_start]
+        columns:
+          month_start: Month
+          card_spend: K11 card purchases posted to the ledger (RM)
+          card_purchases: Card purchases posted
+          authorisations: Authorisation attempts
+          approved: Attempts approved (response 00)
+          card_approval_rate: K12 approved / attempts
+          declined_insufficient_funds: Declined for insufficient funds (51)
+          declined_wrong_pin: Declined for a wrong PIN (55)
+          declined_suspected_fraud: Declined as suspected fraud (59)
+          active_cardholders: Customers with at least one approved purchase
+          card_activation_30d: K10 share of the month's new cardholders who activated within 30 days; blank until every customer in the cohort has had 30 days
+      card_categories_monthly:
+        description: Card spend by merchant category (approved, not reversed, by authorisation month).
+        grain: One row per month per merchant category
+        primary_key: [month_start, merchant_category]
+        columns:
+          month_start: Month
+          category_group: Broader merchant group
+          merchant_category: Merchant category
+          purchases: Purchases
+          spend: Spend (RM)
+      deposits_monthly:
+        description: Deposit KPIs by month.
+        grain: One row per month
+        primary_key: [month_start]
+        columns:
+          month_start: Month
+          casa_balance: Savings balances at month end (RM)
+          fd_balance: Fixed deposit balances at month end (RM)
+          promo_fd_balance: Raya promotion fixed deposit balances (RM)
+          total_deposits: K13 savings plus fixed deposits (RM)
+          casa_ratio: K14 savings / total deposits
+          average_deposits: Sum of accounts' average balances in the month (RM)
+          interest_expense: Interest accrued on deposits (RM)
+          cost_of_funds: K15 interest expense / average deposits, annualised
+          fd_placed: New money placed in fixed deposits (RM)
+      fd_maturity_outcomes:
+        description: What happened to each matured fixed deposit, for K16.
+        grain: One row per matured fixed deposit
+        primary_key: [account_id]
+        columns:
+          account_id: Fixed deposit account
+          customer_id: Depositor
+          is_promo_fd: True for Raya promotion deposits
+          maturity_date: Maturity date
+          maturity_month: First day of the maturity month
+          matured_amount: Principal plus interest paid out at maturity (RM)
+          rolled_over: True if rolled into a new fixed deposit
+          left_within_30d: Money transferred out of the bank within 30 days of maturity (RM)
+          retained_30d: Money still with the bank 30 days after maturity (RM)
+          window_complete: True once 30 days have passed within the data
+      credit_monthly:
+        description: Personal financing KPIs by month.
+        grain: One row per month from Jan 2025
+        primary_key: [month_start]
+        columns:
+          month_start: Month
+          loans_on_book: Active loans at month end
+          gross_loans: K17 principal outstanding on active loans (RM)
+          loans_disbursed: Loans disbursed in the month
+          amount_disbursed: K18 principal disbursed in the month (RM)
+          par30: K19 share of gross loans 30+ days past due
+          gil_ratio: K20 share of gross loans more than 90 days past due
+          written_off: Principal written off in the month (RM)
+          interest_income: Interest earned on performing loans (RM)
+          early_delinquency_mob6: K21 share of loans disbursed six months earlier ever 30+ days past due
+      vintage_curves:
+        description: Share of each monthly vintage ever 30+ days past due, by month on book.
+        grain: One row per vintage month per month on book
+        primary_key: [vintage_month, months_on_book]
+        columns:
+          vintage_month: Month the loans were disbursed
+          credit_policy: Policy that approved the vintage
+          months_on_book: Months since disbursement
+          loans: Loans in the vintage
+          ever_30plus_loans: Loans ever 30+ days past due by this month on book
+          ever_30plus_rate: ever_30plus_loans / loans
+      roll_rates:
+        description: Loans moving between delinquency buckets from one month end to the next.
+        grain: One row per month per from-bucket per to-bucket
+        primary_key: [month_start, from_bucket, to_bucket]
+        columns:
+          month_start: Month the loans moved into
+          from_bucket: Bucket at the previous month end
+          to_bucket: Bucket at this month end
+          loans: Loans that moved
+      finance_monthly:
+        description: Net interest income by month, on an accrual basis.
+        grain: One row per month
+        primary_key: [month_start]
+        columns:
+          month_start: Month
+          loan_interest_income: Interest earned on performing loans (RM)
+          deposit_interest_expense: Interest accrued on deposits (RM)
+          net_interest_income: K22 income minus expense (RM)
+      kpi_monthly:
+        description: Every catalog KPI in one long table, for the dashboard and the Excel pack.
+        grain: One row per KPI per month
+        primary_key: [month_start, kpi_id]
+        columns:
+          month_start: Month
+          kpi_id: KPI identifier from the catalog, K01 to K22
+          kpi_name: KPI name
+          family: KPI family
+          unit: count, pct, rm or number
+          direction: higher or lower is better
+          value: KPI value (shares as 0 to 1)
+      scorecard:
+        description: The six scorecard KPIs against plan with a red, amber or green status.
+        grain: One row per scorecard KPI per month
+        primary_key: [month_start, kpi_id]
+        columns:
+          month_start: Month
+          kpi_id: KPI identifier
+          kpi_name: KPI name
+          unit: count, pct or rm
+          direction: higher or lower is better
+          owner: Accountable owner
+          actual: Value this month
+          prior_month: Value last month
+          plan: Plan for the month
+          pct_of_plan: actual / plan
+          variance_to_plan: actual - plan
+          amber_tolerance: How far from plan still counts as amber
+          status: GREEN, AMBER or RED
+          status_label: On plan, Watch or Off plan (the status in words)
+          status_rank: 1 green, 2 amber, 3 red (for sorting)
+          change_vs_prior_month: better, worse or flat, allowing for direction

@@ -1,0 +1,289 @@
+month_start,category_group,merchant_category,purchases,spend
+2024-09-01,Online,Online marketplaces,397,77184.570000
+2024-09-01,Everyday,Groceries,367,58054.310000
+2024-09-01,Travel,Airlines and travel,80,57477.760000
+2024-09-01,Transport,Fuel,186,40563.390000
+2024-09-01,Dining,Restaurants,271,35184.860000
+2024-09-01,Dining,Fast food,318,18149.690000
+2024-09-01,Transport,E-hailing and taxis,227,17776.830000
+2024-09-01,Shopping,Clothing,81,17172.530000
+2024-09-01,Bills,Telco and bills,104,15944.460000
+2024-09-01,Shopping,Electronics,41,15867.420000
+2024-09-01,Everyday,Pharmacies,75,7344.870000
+2024-09-01,Online,Streaming and subscriptions,98,7159.410000
+2024-10-01,Online,Online marketplaces,989,155137.490000
+2024-10-01,Everyday,Groceries,834,135144.810000
+2024-10-01,Dining,Restaurants,678,82016.600000
+2024-10-01,Travel,Airlines and travel,136,80991.560000
+2024-10-01,Transport,Fuel,404,78126.480000
+2024-10-01,Shopping,Clothing,189,48949.250000
+2024-10-01,Dining,Fast food,679,42881.770000
+2024-10-01,Transport,E-hailing and taxis,516,41083.460000
+2024-10-01,Bills,Telco and bills,234,40794.890000
+2024-10-01,Shopping,Electronics,87,31897.330000
+2024-10-01,Everyday,Pharmacies,166,26380.340000
+2024-10-01,Online,Streaming and subscriptions,304,24631.860000
+2024-11-01,Online,Online marketplaces,1582,287035.540000
+2024-11-01,Everyday,Groceries,1338,216131.360000
+2024-11-01,Travel,Airlines and travel,232,146889.170000
+2024-11-01,Dining,Restaurants,1001,121734.740000
+2024-11-01,Transport,Fuel,637,107593.470000
+2024-11-01,Dining,Fast food,1066,72648.280000
+2024-11-01,Shopping,Clothing,300,72086.150000
+2024-11-01,Bills,Telco and bills,382,70365.890000
+2024-11-01,Transport,E-hailing and taxis,832,70256.680000
+2024-11-01,Shopping,Electronics,114,54246.080000
+2024-11-01,Online,Streaming and subscriptions,448,48412.330000
+2024-11-01,Everyday,Pharmacies,276,45892.670000
+2024-12-01,Online,Online marketplaces,2046,355345.970000
+2024-12-01,Everyday,Groceries,1906,296507.770000
+2024-12-01,Travel,Airlines and travel,319,205507.220000
+2024-12-01,Dining,Restaurants,1530,178111.140000
+2024-12-01,Transport,Fuel,864,173101.800000
+2024-12-01,Shopping,Electronics,210,104606.690000
+2024-12-01,Shopping,Clothing,422,102338.560000
+2024-12-01,Dining,Fast food,1498,101667.830000
+2024-12-01,Transport,E-hailing and taxis,1154,88008.580000
+2024-12-01,Bills,Telco and bills,533,82577.460000
+2024-12-01,Online,Streaming and subscriptions,647,62412.090000
+2024-12-01,Everyday,Pharmacies,398,62009.990000
+2025-01-01,Online,Online marketplaces,2675,567319.070000
+2025-01-01,Everyday,Groceries,2323,469376.520000
+2025-01-01,Travel,Airlines and travel,394,301596.670000
+2025-01-01,Transport,Fuel,1171,285958.230000
+2025-01-01,Dining,Restaurants,1824,255060.490000
+2025-01-01,Dining,Fast food,1960,163536.440000
+2025-01-01,Shopping,Clothing,554,163252.610000
+2025-01-01,Shopping,Electronics,263,155062.610000
+2025-01-01,Bills,Telco and bills,679,147050.980000
+2025-01-01,Transport,E-hailing and taxis,1410,136673.210000
+2025-01-01,Everyday,Pharmacies,489,93342.850000
+2025-01-01,Online,Streaming and subscriptions,765,91529.480000
+2025-02-01,Online,Online marketplaces,3248,709058.550000
+2025-02-01,Everyday,Groceries,2982,603566.840000
+2025-02-01,Travel,Airlines and travel,523,359988.330000
+2025-02-01,Dining,Restaurants,2335,356030.110000
+2025-02-01,Transport,Fuel,1416,328956.410000
+2025-02-01,Shopping,Electronics,340,213190.320000
+2025-02-01,Dining,Fast food,2434,201789.830000
+2025-02-01,Shopping,Clothing,688,194793.730000
+2025-02-01,Transport,E-hailing and taxis,1810,180613.250000
+2025-02-01,Bills,Telco and bills,822,178565.210000
+2025-02-01,Everyday,Pharmacies,634,115344.040000
+2025-02-01,Online,Streaming and subscriptions,953,115219.720000
+2025-03-01,Online,Online marketplaces,4013,772047.050000
+2025-03-01,Everyday,Groceries,3574,641813.830000
+2025-03-01,Travel,Airlines and travel,619,445719.980000
+2025-03-01,Transport,Fuel,1834,417513.020000
+2025-03-01,Dining,Restaurants,2824,388384.240000
+2025-03-01,Shopping,Clothing,869,245454.910000
+2025-03-01,Dining,Fast food,2970,245437.710000
+2025-03-01,Transport,E-hailing and taxis,2216,212989.540000
+2025-03-01,Bills,Telco and bills,1084,212801.910000
+2025-03-01,Shopping,Electronics,397,203665.240000
+2025-03-01,Online,Streaming and subscriptions,1160,144120.810000
+2025-03-01,Everyday,Pharmacies,710,110577.100000
+2025-04-01,Online,Online marketplaces,4640,886883.530000
+2025-04-01,Everyday,Groceries,4279,761585.600000
+2025-04-01,Travel,Airlines and travel,736,479118.270000
+2025-04-01,Dining,Restaurants,3248,450646.230000
+2025-04-01,Transport,Fuel,1966,418921.170000
+2025-04-01,Shopping,Clothing,969,280823.530000
+2025-04-01,Shopping,Electronics,442,266995.110000
+2025-04-01,Dining,Fast food,3331,259097.330000
+2025-04-01,Bills,Telco and bills,1154,224647.750000
+2025-04-01,Transport,E-hailing and taxis,2503,224295.220000
+2025-04-01,Online,Streaming and subscriptions,1417,152448.140000
+2025-04-01,Everyday,Pharmacies,880,147629.660000
+2025-05-01,Online,Online marketplaces,5427,1039157.550000
+2025-05-01,Everyday,Groceries,4760,837476.420000
+2025-05-01,Travel,Airlines and travel,815,525292.960000
+2025-05-01,Transport,Fuel,2380,499841.860000
+2025-05-01,Dining,Restaurants,3776,467965.790000
+2025-05-01,Shopping,Clothing,1081,285050.490000
+2025-05-01,Dining,Fast food,3775,268410.390000
+2025-05-01,Shopping,Electronics,507,256535.350000
+2025-05-01,Transport,E-hailing and taxis,2950,251236.750000
+2025-05-01,Bills,Telco and bills,1374,239013.680000
+2025-05-01,Online,Streaming and subscriptions,1592,165651.320000
+2025-05-01,Everyday,Pharmacies,1009,158024.660000
+2025-06-01,Online,Online marketplaces,6030,1165345.100000
+2025-06-01,Everyday,Groceries,5414,992253.440000
+2025-06-01,Travel,Airlines and travel,975,656662.670000
+2025-06-01,Dining,Restaurants,4313,577029.860000
+2025-06-01,Transport,Fuel,2618,573365.430000
+2025-06-01,Dining,Fast food,4448,336107.230000
+2025-06-01,Shopping,Clothing,1248,329644.190000
+2025-06-01,Shopping,Electronics,580,287884.800000
+2025-06-01,Bills,Telco and bills,1555,284628.260000
+2025-06-01,Transport,E-hailing and taxis,3164,280865.420000
+2025-06-01,Online,Streaming and subscriptions,1875,196191.410000
+2025-06-01,Everyday,Pharmacies,1157,190412.320000
+2025-07-01,Online,Online marketplaces,6835,1411230.790000
+2025-07-01,Everyday,Groceries,6267,1201609.480000
+2025-07-01,Travel,Airlines and travel,1103,792899.220000
+2025-07-01,Transport,Fuel,2938,683981.850000
+2025-07-01,Dining,Restaurants,4661,675138.350000
+2025-07-01,Dining,Fast food,4951,410149.690000
+2025-07-01,Shopping,Electronics,659,388953.430000
+2025-07-01,Shopping,Clothing,1365,365135.650000
+2025-07-01,Transport,E-hailing and taxis,3637,359380.850000
+2025-07-01,Bills,Telco and bills,1703,334598.460000
+2025-07-01,Online,Streaming and subscriptions,2067,248774.270000
+2025-07-01,Everyday,Pharmacies,1213,207232.460000
+2025-08-01,Online,Online marketplaces,7482,1552896.940000
+2025-08-01,Everyday,Groceries,6585,1242764.320000
+2025-08-01,Travel,Airlines and travel,1180,882328.950000
+2025-08-01,Transport,Fuel,3285,769501.740000
+2025-08-01,Dining,Restaurants,5168,729203.080000
+2025-08-01,Shopping,Electronics,784,473621.840000
+2025-08-01,Dining,Fast food,5503,461042.540000
+2025-08-01,Bills,Telco and bills,1985,444142.700000
+2025-08-01,Shopping,Clothing,1491,423478.470000
+2025-08-01,Transport,E-hailing and taxis,4058,403689.480000
+2025-08-01,Online,Streaming and subscriptions,2269,272216.500000
+2025-08-01,Everyday,Pharmacies,1320,241590.400000
+2025-09-01,Online,Online marketplaces,8304,1679404.110000
+2025-09-01,Everyday,Groceries,7410,1392412.160000
+2025-09-01,Travel,Airlines and travel,1339,915114.730000
+2025-09-01,Transport,Fuel,3573,836737.960000
+2025-09-01,Dining,Restaurants,5675,812511.120000
+2025-09-01,Shopping,Clothing,1707,489272.810000
+2025-09-01,Shopping,Electronics,817,464888.820000
+2025-09-01,Transport,E-hailing and taxis,4505,450699.550000
+2025-09-01,Dining,Fast food,5755,450134.950000
+2025-09-01,Bills,Telco and bills,1993,407480.300000
+2025-09-01,Online,Streaming and subscriptions,2456,287137.310000
+2025-09-01,Everyday,Pharmacies,1483,238171.100000
+2025-10-01,Online,Online marketplaces,8748,1818016.920000
+2025-10-01,Everyday,Groceries,8004,1597561.660000
+2025-10-01,Travel,Airlines and travel,1338,950056.510000
+2025-10-01,Transport,Fuel,3832,930990.890000
+2025-10-01,Dining,Restaurants,6181,910215.880000
+2025-10-01,Dining,Fast food,6360,531671.060000
+2025-10-01,Shopping,Electronics,873,491844.630000
+2025-10-01,Shopping,Clothing,1748,484795.010000
+2025-10-01,Transport,E-hailing and taxis,4655,465247.200000
+2025-10-01,Bills,Telco and bills,2270,460574.980000
+2025-10-01,Online,Streaming and subscriptions,2592,312165.650000
+2025-10-01,Everyday,Pharmacies,1645,300407.650000
+2025-11-01,Online,Online marketplaces,9702,2011461.890000
+2025-11-01,Everyday,Groceries,8700,1716764.410000
+2025-11-01,Travel,Airlines and travel,1541,1132504.770000
+2025-11-01,Transport,Fuel,4230,1006741.250000
+2025-11-01,Dining,Restaurants,6832,965833.210000
+2025-11-01,Dining,Fast food,7199,573202.290000
+2025-11-01,Shopping,Electronics,933,545977.810000
+2025-11-01,Bills,Telco and bills,2466,529073.180000
+2025-11-01,Shopping,Clothing,1924,515893.680000
+2025-11-01,Transport,E-hailing and taxis,5206,501740.480000
+2025-11-01,Online,Streaming and subscriptions,2834,350217.670000
+2025-11-01,Everyday,Pharmacies,1736,322136.990000
+2025-12-01,Online,Online marketplaces,10514,2100698.910000
+2025-12-01,Everyday,Groceries,9376,1789974.970000
+2025-12-01,Travel,Airlines and travel,1623,1153100.600000
+2025-12-01,Transport,Fuel,4518,1044149.760000
+2025-12-01,Dining,Restaurants,7062,996247.040000
+2025-12-01,Dining,Fast food,7429,603928.830000
+2025-12-01,Shopping,Electronics,989,562713.380000
+2025-12-01,Shopping,Clothing,2051,561551.040000
+2025-12-01,Transport,E-hailing and taxis,5647,552188.150000
+2025-12-01,Bills,Telco and bills,2687,551137.850000
+2025-12-01,Online,Streaming and subscriptions,3104,371707.880000
+2025-12-01,Everyday,Pharmacies,1985,357862.870000
+2026-01-01,Online,Online marketplaces,11313,2120184.680000
+2026-01-01,Everyday,Groceries,10087,1814050.790000
+2026-01-01,Travel,Airlines and travel,1740,1210087.470000
+2026-01-01,Transport,Fuel,4898,1063709.070000
+2026-01-01,Dining,Restaurants,7902,1018263.300000
+2026-01-01,Shopping,Clothing,2356,596228.120000
+2026-01-01,Shopping,Electronics,1107,594608.590000
+2026-01-01,Dining,Fast food,8071,586807.210000
+2026-01-01,Bills,Telco and bills,2946,566051.860000
+2026-01-01,Transport,E-hailing and taxis,5994,538508.380000
+2026-01-01,Online,Streaming and subscriptions,3494,377554.290000
+2026-01-01,Everyday,Pharmacies,2053,319679.050000
+2026-02-01,Online,Online marketplaces,12315,2280554.630000
+2026-02-01,Everyday,Groceries,10775,1920483.820000
+2026-02-01,Travel,Airlines and travel,1839,1200754.930000
+2026-02-01,Transport,Fuel,5225,1167641.810000
+2026-02-01,Dining,Restaurants,8433,1088003.770000
+2026-02-01,Dining,Fast food,8747,664079.450000
+2026-02-01,Shopping,Electronics,1211,656156.750000
+2026-02-01,Shopping,Clothing,2432,651782.250000
+2026-02-01,Bills,Telco and bills,3112,613131.300000
+2026-02-01,Transport,E-hailing and taxis,6578,594832.590000
+2026-02-01,Online,Streaming and subscriptions,3533,396962.440000
+2026-02-01,Everyday,Pharmacies,2264,384087.450000
+2026-03-01,Online,Online marketplaces,13050,2420986.950000
+2026-03-01,Everyday,Groceries,11793,2109624.450000
+2026-03-01,Travel,Airlines and travel,2037,1308228.260000
+2026-03-01,Dining,Restaurants,9137,1187925.020000
+2026-03-01,Transport,Fuel,5567,1179337.590000
+2026-03-01,Dining,Fast food,9419,695279.750000
+2026-03-01,Shopping,Electronics,1285,685767.550000
+2026-03-01,Shopping,Clothing,2649,669959.530000
+2026-03-01,Bills,Telco and bills,3439,663896.960000
+2026-03-01,Transport,E-hailing and taxis,6954,621345.770000
+2026-03-01,Online,Streaming and subscriptions,3860,431403.640000
+2026-03-01,Everyday,Pharmacies,2285,372154.250000
+2026-04-01,Online,Online marketplaces,14045,2661229.500000
+2026-04-01,Everyday,Groceries,12664,2276133.130000
+2026-04-01,Travel,Airlines and travel,2150,1424006.740000
+2026-04-01,Transport,Fuel,6104,1331306.900000
+2026-04-01,Dining,Restaurants,9749,1266941.410000
+2026-04-01,Dining,Fast food,10242,759674.250000
+2026-04-01,Shopping,Clothing,2789,748450.910000
+2026-04-01,Shopping,Electronics,1373,735183.700000
+2026-04-01,Transport,E-hailing and taxis,7453,668309.290000
+2026-04-01,Bills,Telco and bills,3510,656879.360000
+2026-04-01,Online,Streaming and subscriptions,4232,447030.270000
+2026-04-01,Everyday,Pharmacies,2606,427053.050000
+2026-05-01,Online,Online marketplaces,15144,2838581.320000
+2026-05-01,Everyday,Groceries,13588,2392622.310000
+2026-05-01,Travel,Airlines and travel,2335,1568700.090000
+2026-05-01,Transport,Fuel,6454,1420767.070000
+2026-05-01,Dining,Restaurants,10410,1339517.040000
+2026-05-01,Dining,Fast food,10732,812668.910000
+2026-05-01,Shopping,Clothing,3021,785973.900000
+2026-05-01,Transport,E-hailing and taxis,8024,732840.380000
+2026-05-01,Shopping,Electronics,1459,730644.980000
+2026-05-01,Bills,Telco and bills,3757,716750.040000
+2026-05-01,Online,Streaming and subscriptions,4583,512094.210000
+2026-05-01,Everyday,Pharmacies,2778,454778.550000
+2026-06-01,Online,Online marketplaces,16091,3027788.820000
+2026-06-01,Everyday,Groceries,14230,2507019.140000
+2026-06-01,Travel,Airlines and travel,2419,1566472.060000
+2026-06-01,Transport,Fuel,6909,1452587.580000
+2026-06-01,Dining,Restaurants,11181,1421662.700000
+2026-06-01,Dining,Fast food,11677,856131.760000
+2026-06-01,Shopping,Clothing,3233,853009.030000
+2026-06-01,Shopping,Electronics,1533,838908.630000
+2026-06-01,Bills,Telco and bills,4116,791194.000000
+2026-06-01,Transport,E-hailing and taxis,8378,758539.660000
+2026-06-01,Online,Streaming and subscriptions,4718,535440.360000
+2026-06-01,Everyday,Pharmacies,2891,486334.720000
+2026-07-01,Online,Online marketplaces,16966,3097872.920000
+2026-07-01,Everyday,Groceries,15049,2638865.140000
+2026-07-01,Travel,Airlines and travel,2605,1742131.640000
+2026-07-01,Transport,Fuel,7408,1565401.570000
+2026-07-01,Dining,Restaurants,11721,1447664.480000
+2026-07-01,Shopping,Clothing,3533,888443.980000
+2026-07-01,Dining,Fast food,12239,860295.910000
+2026-07-01,Shopping,Electronics,1585,831718.640000
+2026-07-01,Transport,E-hailing and taxis,9123,795109.370000
+2026-07-01,Bills,Telco and bills,4334,787400.340000
+2026-07-01,Online,Streaming and subscriptions,5121,551562.440000
+2026-07-01,Everyday,Pharmacies,3051,480233.480000
+2026-08-01,Online,Online marketplaces,17904,3295801.890000
+2026-08-01,Everyday,Groceries,16222,2850185.560000
+2026-08-01,Travel,Airlines and travel,2852,1870546.680000
+2026-08-01,Transport,Fuel,7901,1630814.130000
+2026-08-01,Dining,Restaurants,12548,1601444.980000
+2026-08-01,Shopping,Clothing,3729,969857.130000
+2026-08-01,Dining,Fast food,12927,938421.000000
+2026-08-01,Shopping,Electronics,1760,924445.610000
+2026-08-01,Transport,E-hailing and taxis,9811,907202.130000
+2026-08-01,Bills,Telco and bills,4466,845930.880000
+2026-08-01,Online,Streaming and subscriptions,5461,586004.550000
+2026-08-01,Everyday,Pharmacies,3336,506692.500000

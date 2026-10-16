@@ -1,0 +1,42 @@
+/// Deposit balances at each month end, by type.
+table 'Deposit mix'
+
+	/// Balances at month end, in RM millions.
+	measure 'Deposit balance' = SUM('Deposit mix'[Balance in RM millions])
+		formatString: \R\M#,##0.0\m
+
+	column Month
+		dataType: dateTime
+		formatString: mmm yyyy
+		summarizeBy: none
+		sourceColumn: Month
+
+	column 'Deposit type'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Deposit type
+		sortByColumn: 'Type order'
+
+	column 'Balance in RM millions'
+		dataType: double
+		isHidden
+		summarizeBy: none
+		sourceColumn: Balance in RM millions
+
+	column 'Type order'
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Type order
+
+	partition 'Deposit mix' = m
+		mode: import
+		source =
+				let
+				    Source = #"Dashboard data",
+				    #"Kept Deposit mix rows" = Table.SelectRows(Source, each [chart] = "deposit_mix"),
+				    #"Kept columns" = Table.SelectColumns(#"Kept Deposit mix rows", {"month", "series", "rm_millions"}),
+				    #"Renamed columns" = Table.RenameColumns(#"Kept columns", {{"month", "Month"}, {"series", "Deposit type"}, {"rm_millions", "Balance in RM millions"}}),
+				    #"Added Type order" = Table.AddColumn(#"Renamed columns", "Type order", each List.PositionOf({"Savings (CASA)", "Standard fixed deposits", "Raya promotion deposits"}, [Deposit type]) + 1, Int64.Type)
+				in
+				    #"Added Type order"

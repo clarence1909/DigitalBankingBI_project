@@ -1,0 +1,141 @@
+month_start,kpi_id,plan_value,note
+2024-09-01,K02,800,FY plan
+2024-10-01,K02,850,FY plan
+2024-11-01,K02,950,FY plan
+2024-12-01,K02,1000,FY plan
+2025-01-01,K02,1000,FY plan
+2025-02-01,K02,1050,FY plan
+2025-03-01,K02,1100,FY plan
+2025-04-01,K02,1150,FY plan
+2025-05-01,K02,1200,FY plan
+2025-06-01,K02,1250,FY plan
+2025-07-01,K02,1300,FY plan
+2025-08-01,K02,1300,FY plan
+2025-09-01,K02,1350,FY plan
+2025-10-01,K02,1400,FY plan
+2025-11-01,K02,1450,FY plan
+2025-12-01,K02,1550,FY plan
+2026-01-01,K02,1600,FY plan
+2026-02-01,K02,1650,FY plan
+2026-03-01,K02,1700,FY plan
+2026-04-01,K02,1750,FY plan
+2026-05-01,K02,1800,FY plan
+2026-06-01,K02,1850,FY plan
+2026-07-01,K02,1900,FY plan
+2026-08-01,K02,1950,FY plan
+2024-09-01,K07,700,FY plan
+2024-10-01,K07,1400,FY plan
+2024-11-01,K07,2100,FY plan
+2024-12-01,K07,2800,FY plan
+2025-01-01,K07,3400,FY plan
+2025-02-01,K07,4000,FY plan
+2025-03-01,K07,4700,FY plan
+2025-04-01,K07,5400,FY plan
+2025-05-01,K07,6100,FY plan
+2025-06-01,K07,6800,FY plan
+2025-07-01,K07,7500,FY plan
+2025-08-01,K07,8200,FY plan
+2025-09-01,K07,8900,FY plan
+2025-10-01,K07,9700,FY plan
+2025-11-01,K07,10500,FY plan
+2025-12-01,K07,11300,FY plan
+2026-01-01,K07,12100,FY plan
+2026-02-01,K07,12900,FY plan
+2026-03-01,K07,13700,FY plan
+2026-04-01,K07,14500,FY plan
+2026-05-01,K07,15300,FY plan
+2026-06-01,K07,16200,FY plan
+2026-07-01,K07,17100,FY plan
+2026-08-01,K07,18000,FY plan
+2024-09-01,K13,2500000.0,FY plan
+2024-10-01,K13,5000000.0,FY plan
+2024-11-01,K13,8000000.0,FY plan
+2024-12-01,K13,11000000.0,FY plan
+2025-01-01,K13,14000000.0,FY plan
+2025-02-01,K13,17500000.0,FY plan
+2025-03-01,K13,21000000.0,FY plan
+2025-04-01,K13,25000000.0,FY plan
+2025-05-01,K13,29000000.0,FY plan
+2025-06-01,K13,33000000.0,FY plan
+2025-07-01,K13,37500000.0,FY plan
+2025-08-01,K13,42000000.0,FY plan
+2025-09-01,K13,47000000.0,FY plan
+2025-10-01,K13,52000000.0,FY plan
+2025-11-01,K13,57500000.0,FY plan
+2025-12-01,K13,63000000.0,FY plan
+2026-01-01,K13,69000000.0,FY plan
+2026-02-01,K13,75000000.0,FY plan
+2026-03-01,K13,81000000.0,FY plan
+2026-04-01,K13,87500000.0,FY plan
+2026-05-01,K13,94000000.0,FY plan
+2026-06-01,K13,101000000.0,FY plan
+2026-07-01,K13,108000000.0,FY plan
+2026-08-01,K13,115000000.0,FY plan
+2024-09-01,K14,0.9,"FY2024 launch plan 90%, then 80%"
+2024-10-01,K14,0.9,"FY2024 launch plan 90%, then 80%"
+2024-11-01,K14,0.9,"FY2024 launch plan 90%, then 80%"
+2024-12-01,K14,0.9,"FY2024 launch plan 90%, then 80%"
+2025-01-01,K14,0.8,"FY2024 launch plan 90%, then 80%"
+2025-02-01,K14,0.8,"FY2024 launch plan 90%, then 80%"
+2025-03-01,K14,0.8,"FY2024 launch plan 90%, then 80%"
+2025-04-01,K14,0.8,"FY2024 launch plan 90%, then 80%"
+2025-05-01,K14,0.8,"FY2024 launch plan 90%, then 80%"
+2025-06-01,K14,0.8,"FY2024 launch plan 90%, then 80%"
+2025-07-01,K14,0.8,"FY2024 launch plan 90%, then 80%"
+2025-08-01,K14,0.8,"FY2024 launch plan 90%, then 80%"
+2025-09-01,K14,0.8,"FY2024 launch plan 90%, then 80%"
+2025-10-01,K14,0.8,"FY2024 launch plan 90%, then 80%"
+2025-11-01,K14,0.8,"FY2024 launch plan 90%, then 80%"
+2025-12-01,K14,0.8,"FY2024 launch plan 90%, then 80%"
+2026-01-01,K14,0.8,"FY2024 launch plan 90%, then 80%"
+2026-02-01,K14,0.8,"FY2024 launch plan 90%, then 80%"
+2026-03-01,K14,0.8,"FY2024 launch plan 90%, then 80%"
+2026-04-01,K14,0.8,"FY2024 launch plan 90%, then 80%"
+2026-05-01,K14,0.8,"FY2024 launch plan 90%, then 80%"
+2026-06-01,K14,0.8,"FY2024 launch plan 90%, then 80%"
+2026-07-01,K14,0.8,"FY2024 launch plan 90%, then 80%"
+2026-08-01,K14,0.8,"FY2024 launch plan 90%, then 80%"
+2024-09-01,K15,0.022,Re-planned to 2.00% after the 9 Jul 2025 OPR cut
+2024-10-01,K15,0.022,Re-planned to 2.00% after the 9 Jul 2025 OPR cut
+2024-11-01,K15,0.022,Re-planned to 2.00% after the 9 Jul 2025 OPR cut
+2024-12-01,K15,0.022,Re-planned to 2.00% after the 9 Jul 2025 OPR cut
+2025-01-01,K15,0.022,Re-planned to 2.00% after the 9 Jul 2025 OPR cut
+2025-02-01,K15,0.022,Re-planned to 2.00% after the 9 Jul 2025 OPR cut
+2025-03-01,K15,0.022,Re-planned to 2.00% after the 9 Jul 2025 OPR cut
+2025-04-01,K15,0.022,Re-planned to 2.00% after the 9 Jul 2025 OPR cut
+2025-05-01,K15,0.022,Re-planned to 2.00% after the 9 Jul 2025 OPR cut
+2025-06-01,K15,0.022,Re-planned to 2.00% after the 9 Jul 2025 OPR cut
+2025-07-01,K15,0.022,Re-planned to 2.00% after the 9 Jul 2025 OPR cut
+2025-08-01,K15,0.02,Re-planned to 2.00% after the 9 Jul 2025 OPR cut
+2025-09-01,K15,0.02,Re-planned to 2.00% after the 9 Jul 2025 OPR cut
+2025-10-01,K15,0.02,Re-planned to 2.00% after the 9 Jul 2025 OPR cut
+2025-11-01,K15,0.02,Re-planned to 2.00% after the 9 Jul 2025 OPR cut
+2025-12-01,K15,0.02,Re-planned to 2.00% after the 9 Jul 2025 OPR cut
+2026-01-01,K15,0.02,Re-planned to 2.00% after the 9 Jul 2025 OPR cut
+2026-02-01,K15,0.02,Re-planned to 2.00% after the 9 Jul 2025 OPR cut
+2026-03-01,K15,0.02,Re-planned to 2.00% after the 9 Jul 2025 OPR cut
+2026-04-01,K15,0.02,Re-planned to 2.00% after the 9 Jul 2025 OPR cut
+2026-05-01,K15,0.02,Re-planned to 2.00% after the 9 Jul 2025 OPR cut
+2026-06-01,K15,0.02,Re-planned to 2.00% after the 9 Jul 2025 OPR cut
+2026-07-01,K15,0.02,Re-planned to 2.00% after the 9 Jul 2025 OPR cut
+2026-08-01,K15,0.02,Re-planned to 2.00% after the 9 Jul 2025 OPR cut
+2025-01-01,K19,0.025,"No financing before Jan 2025; FY2025 2.5%, FY2026 3.0%"
+2025-02-01,K19,0.025,"No financing before Jan 2025; FY2025 2.5%, FY2026 3.0%"
+2025-03-01,K19,0.025,"No financing before Jan 2025; FY2025 2.5%, FY2026 3.0%"
+2025-04-01,K19,0.025,"No financing before Jan 2025; FY2025 2.5%, FY2026 3.0%"
+2025-05-01,K19,0.025,"No financing before Jan 2025; FY2025 2.5%, FY2026 3.0%"
+2025-06-01,K19,0.025,"No financing before Jan 2025; FY2025 2.5%, FY2026 3.0%"
+2025-07-01,K19,0.025,"No financing before Jan 2025; FY2025 2.5%, FY2026 3.0%"
+2025-08-01,K19,0.025,"No financing before Jan 2025; FY2025 2.5%, FY2026 3.0%"
+2025-09-01,K19,0.025,"No financing before Jan 2025; FY2025 2.5%, FY2026 3.0%"
+2025-10-01,K19,0.025,"No financing before Jan 2025; FY2025 2.5%, FY2026 3.0%"
+2025-11-01,K19,0.025,"No financing before Jan 2025; FY2025 2.5%, FY2026 3.0%"
+2025-12-01,K19,0.025,"No financing before Jan 2025; FY2025 2.5%, FY2026 3.0%"
+2026-01-01,K19,0.03,"No financing before Jan 2025; FY2025 2.5%, FY2026 3.0%"
+2026-02-01,K19,0.03,"No financing before Jan 2025; FY2025 2.5%, FY2026 3.0%"
+2026-03-01,K19,0.03,"No financing before Jan 2025; FY2025 2.5%, FY2026 3.0%"
+2026-04-01,K19,0.03,"No financing before Jan 2025; FY2025 2.5%, FY2026 3.0%"
+2026-05-01,K19,0.03,"No financing before Jan 2025; FY2025 2.5%, FY2026 3.0%"
+2026-06-01,K19,0.03,"No financing before Jan 2025; FY2025 2.5%, FY2026 3.0%"
+2026-07-01,K19,0.03,"No financing before Jan 2025; FY2025 2.5%, FY2026 3.0%"
+2026-08-01,K19,0.03,"No financing before Jan 2025; FY2025 2.5%, FY2026 3.0%"

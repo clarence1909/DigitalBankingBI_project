@@ -1,0 +1,8 @@
+product_code,effective_from,effective_to,rate_pct,note
+SAV-01,2024-09-01,2025-07-31,2.0,Launch savings rate
+SAV-01,2025-08-01,2099-12-31,1.85,Passes on the 9 Jul 2025 OPR cut
+FD-06M,2024-09-01,2025-07-31,2.35,Board rate
+FD-06M,2025-08-01,2099-12-31,2.15,Board rate after OPR cut
+FD-12M,2024-09-01,2025-07-31,2.5,Board rate
+FD-12M,2025-08-01,2099-12-31,2.3,Board rate after OPR cut
+FD-RAYA25,2025-03-01,2025-05-31,3.88,"Raya promotion, placements 1 Mar to 31 May 2025"
